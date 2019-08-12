@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="231.0" fitWidth="200.0" layoutX="39.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="355.0" layoutY="249.0" text="학생 기본정보 담는 화면" />
+      <TextField layoutX="232.0" layoutY="115.0" />
+      <TextField layoutX="564.0" layoutY="202.0" />
+   </children>
+</AnchorPane>
