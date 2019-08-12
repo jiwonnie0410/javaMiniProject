@@ -13,13 +13,6 @@
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1100.0" style="-fx-background-image: url('C:\Users\User\Desktop\자바미니프로젝트이미지');" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-   <center>
-      <ImageView fitHeight="765.0" fitWidth="1100.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-         <image>
-            <Image url="@image/Sailor_Moon_Anime_HD_Desktop_Wallpaper_1366x768.jpg" />
-         </image>
-      </ImageView>
-   </center>
    <top>
       <AnchorPane prefHeight="27.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
          <children>
@@ -68,5 +61,3 @@
       </AnchorPane>
    </top>
 </BorderPane>
-
-
