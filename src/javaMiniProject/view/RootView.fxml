@@ -5,39 +5,39 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.control.TextField?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1100.0" style="-fx-background-image: url('C:\Users\User\Desktop\자바미니프로젝트이미지');" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1100.0" style="-fx-background-image: url('C:\Users\User\Desktop\자바미니프로젝트이미지');" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaMiniProject.view.RootController">
    <top>
       <AnchorPane prefHeight="27.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
          <children>
-            <MenuBar layoutY="1.0" prefHeight="25.0" prefWidth="1100.0">
+            <MenuBar fx:id="menuBar" layoutY="1.0" prefHeight="25.0" prefWidth="1100.0">
               <menus>
                 <Menu mnemonicParsing="false" text="학적">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="기본정보" />
-                        <MenuItem mnemonicParsing="false" text="학적정보" />
-                        <MenuItem mnemonicParsing="false" text="휴학신청" />
-                        <MenuItem mnemonicParsing="false" text="복학신청" />
+                    <MenuItem onAction="#handlePageBasicInform" mnemonicParsing="false" text="기본정보" />
+                        <MenuItem onAction="#handlePageSchoolInform" mnemonicParsing="false" text="학적정보" />
+                        <MenuItem onAction="#handlePageBreak" mnemonicParsing="false" text="휴학신청" />
+                        <MenuItem onAction="#handlePageBack" mnemonicParsing="false" text="복학신청" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="수업">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="시간표조회" />
-                        <MenuItem mnemonicParsing="false" text="성적조회" />
-                        <MenuItem mnemonicParsing="false" text="수강신청" />
+                    <MenuItem onAction="#handlePageTimeSchedule" mnemonicParsing="false" text="시간표조회" />
+                        <MenuItem onAction="#handlePageShowScore" mnemonicParsing="false" text="성적조회" />
+                        <MenuItem onAction="#handlePageSugang" mnemonicParsing="false" text="수강신청" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="등록">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="납부내역조회" />
-                        <MenuItem mnemonicParsing="false" text="고지서" />
-                        <MenuItem mnemonicParsing="false" text="납부하기" />
+                    <MenuItem onAction="#handlePagePaymentHistory" mnemonicParsing="false" text="납부내역조회" />
+                        <MenuItem onAction="#handlePageBill" mnemonicParsing="false" text="고지서" />
+                        <MenuItem onAction="#handlePagePay" mnemonicParsing="false" text="납부하기" />
                   </items>
                 </Menu>
               </menus>

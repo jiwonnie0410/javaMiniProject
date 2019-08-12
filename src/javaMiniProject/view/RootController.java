@@ -36,8 +36,94 @@ public class RootController {
 		}
 	}
 	
+	@FXML
+	public void handlePageBreak(ActionEvent actionEvent) {
+		try {
+			AnchorPane breakApply = FXMLLoader.load(getClass().getResource("BreakApply.fxml"));
+			borderPane.setCenter(breakApply);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
+	@FXML
+	public void handlePageBack(ActionEvent actionEvent) {
+		try {
+			AnchorPane breakApply = FXMLLoader.load(getClass().getResource("BackApply.fxml"));
+			borderPane.setCenter(breakApply);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
+//============================================================================================================
+
+	@FXML // 시간표
+	public void handlePageTimeSchedule(ActionEvent actionEvent) {
+		try {
+			AnchorPane breakApply = FXMLLoader.load(getClass().getResource("BackApply.fxml"));
+			borderPane.setCenter(breakApply);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
+	@FXML // 성적조회
+	public void handlePageShowScore(ActionEvent actionEvent) {
+		try {
+			AnchorPane breakApply = FXMLLoader.load(getClass().getResource("BackApply.fxml"));
+			borderPane.setCenter(breakApply);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML // 수강 신청
+	public void handlePageSugang(ActionEvent actionEvent) {
+		try {
+			AnchorPane breakApply = FXMLLoader.load(getClass().getResource("BackApply.fxml"));
+			borderPane.setCenter(breakApply);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML // 등록금 납부 내역 조회
+	public void handlePagePaymentHistory(ActionEvent actionEvent) {
+		try {
+			AnchorPane breakApply = FXMLLoader.load(getClass().getResource("BackApply.fxml"));
+			borderPane.setCenter(breakApply);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML // 고지서
+	public void handlePageBill(ActionEvent actionEvent) {
+		try {
+			AnchorPane breakApply = FXMLLoader.load(getClass().getResource("BackApply.fxml"));
+			borderPane.setCenter(breakApply);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML // 납부하기
+	public void handlePagePay(ActionEvent actionEvent) {
+		try {
+			AnchorPane breakApply = FXMLLoader.load(getClass().getResource("BackApply.fxml"));
+			borderPane.setCenter(breakApply);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 }

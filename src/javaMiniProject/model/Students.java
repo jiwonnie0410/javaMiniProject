@@ -1,7 +1,7 @@
 package javaMiniProject.model;
 
 public class Students {
-	String studentNumber;
+	int studentNumber;
 	String studentName;
 	String status; // 재적상태 재학 휴학 졸업
 	int complete; // 수료한 학기
@@ -9,11 +9,39 @@ public class Students {
 	String phone;
 	String address;
 	int majorNumber;
-
-	public String getStudentNumber() {
+	String majorName;
+	String gender;
+	String degree;
+	String collegeName;
+	
+	public String getCollegeName() {
+		return collegeName;
+	}
+	public void setCollegeName(String collegeName) {
+		this.collegeName = collegeName;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public String getDegree() {
+		return degree;
+	}
+	public void setDegree(String degree) {
+		this.degree = degree;
+	}
+	public String getMajorName() {
+		return majorName;
+	}
+	public void setMajorName(String majorName) {
+		this.majorName = majorName;
+	}
+	public int getStudentNumber() {
 		return studentNumber;
 	}
-	public void setStudentNumber(String studentNumber) {
+	public void setStudentNumber(int studentNumber) {
 		this.studentNumber = studentNumber;
 	}
 	public String getStudentName() {
