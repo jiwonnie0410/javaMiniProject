@@ -45,7 +45,6 @@ public class InformController implements Initializable {
 		txtAddress.setText(list.get(0).get("address").toString());
 		txtMajorName.setText(list.get(0).get("majorName").toString());
 		txtIdentification.setText(list.get(0).get("identification").toString());
-		System.out.println(list.get(0).get("identification").toString());
 //	comboGender.setItem(list.get(6).get("gender").toString());
 
 	}

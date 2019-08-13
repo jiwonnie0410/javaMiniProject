@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1100.0" style="-fx-background-image: url('C:\Users\User\Desktop\자바미니프로젝트이미지');" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaMiniProject.view.RootController">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaMiniProject.view.RootController">
    <top>
       <AnchorPane prefHeight="27.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
          <children>
@@ -21,7 +21,7 @@
                 <Menu mnemonicParsing="false" text="학적">
                   <items>
                     <MenuItem onAction="#handlePageBasicInform" mnemonicParsing="false" text="기본정보" />
-                        <MenuItem mnemonicParsing="false" text="학적정보" />
+                        <MenuItem onAction="#handlePageSchoolInform" mnemonicParsing="false" text="학적정보" />
                         <MenuItem mnemonicParsing="false" text="휴학신청" />
                         <MenuItem mnemonicParsing="false" text="복학신청" />
                   </items>

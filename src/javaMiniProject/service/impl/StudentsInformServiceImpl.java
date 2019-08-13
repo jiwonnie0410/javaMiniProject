@@ -36,9 +36,20 @@ public class StudentsInformServiceImpl implements StudentInformService {
 	}
 
 	@Override
-	public List<Map<String, Object>> schoolInform(int stuNum) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Map<String, Object>> schoolInform(int stuNum){
+
+		Connection conn = DAO.getConnect();
+		List<Map<String, Object>> list = new ArrayList<>();
+		
+		try {
+			list = informDAO.schoolInform(conn, stuNum);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+		DAO.close(conn);
+		}
+		return list;
 	}
 
 	@Override

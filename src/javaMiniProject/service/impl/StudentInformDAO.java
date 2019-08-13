@@ -65,11 +65,11 @@ public class StudentInformDAO {
 		if (rs.next()) {
 			Map<String, Object> map = new HashMap<String, Object>();
 			map.put("studentNumber", stuNumber);
-			map.put("studentName", rs.getString("S.S_NAME"));
-			map.put("status", rs.getString("S.STATUS"));
-			map.put("complete", rs.getString("S.COMPLETE"));
-			map.put("majorName", rs.getString("M.MAJOR"));
-			map.put("degree", rs.getString("S.DEGREE"));
+			map.put("studentName", rs.getString("S_NAME"));
+			map.put("status", rs.getString("STATUS"));
+			map.put("complete", rs.getString("COMPLETE"));
+			map.put("majorName", rs.getString("MAJOR"));
+			map.put("degree", rs.getString("DEGREE"));
 			map.put("college", rs.getString("단대"));
 			list.add(map);
 			return list;
