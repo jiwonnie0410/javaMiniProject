@@ -49,10 +49,8 @@ public class StudentInformDAO {
 	}
 	
 	// 학적 정보
-	public Students schoolInform(Connection conn, int stuNumber) throws SQLException {
-		Students stu = new Students();
-		Colleges coll = new Colleges();
-		Majors major = new Majors();
+	public List<Map<String, Object>> schoolInform(Connection conn, int stuNumber) throws SQLException {
+		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		
 		String sql = "SELECT S.S_NUMBER, S.S_NAME, S.STATUS, S.COMPLETE, M.MAJOR, S.DEGREE," + 
 				"        (select c.college_name" + 
@@ -65,14 +63,16 @@ public class StudentInformDAO {
 		pstmt.setInt(1, stuNumber);
 		ResultSet rs = pstmt.executeQuery();
 		if (rs.next()) {
-			stu.setStudentNumber(stuNumber); // 학번
-			stu.setStudentName(rs.getString("S.S_NAME")); // 이름
-			stu.setStatus(rs.getString("S.STATUS")); // 재적상태: 재학 휴학 졸업
-			stu.setComplete(rs.getInt("S.COMPLETE")); // 수료학기: 1~8학기
-			major.setMajorName(rs.getString("M.MAJOR")); // 전공이름
-			stu.setDegree(rs.getString("S.DEGREE")); // 학사 석사 박사
-			coll.setCollegeName(rs.getString("단대"));
-			return stu;
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("studentNumber", stuNumber);
+			map.put("studentName", rs.getString("S.S_NAME"));
+			map.put("status", rs.getString("S.STATUS"));
+			map.put("complete", rs.getString("S.COMPLETE"));
+			map.put("majorName", rs.getString("M.MAJOR"));
+			map.put("degree", rs.getString("S.DEGREE"));
+			map.put("college", rs.getString("단대"));
+			list.add(map);
+			return list;
 		}
 		else
 			return null;
