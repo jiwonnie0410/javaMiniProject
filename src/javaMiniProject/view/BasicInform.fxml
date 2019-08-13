@@ -115,37 +115,31 @@
 							</opaqueInsets>
 						</Label>
 						<TextField fx:id="txtStudentNumber" editable="false" prefHeight="23.0" prefWidth="126.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-						<TextField editable="false" prefHeight="23.0" prefWidth="126.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
 							<GridPane.margin>
 								<Insets left="10.0" />
 							</GridPane.margin>
 						</TextField>
-						<TextField fx:id="txtMajorName" GridPane.columnIndex="1" GridPane.rowIndex="5">
-						<TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="5">
+						<TextField fx:id="txtMajorName" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="5">
 							<GridPane.margin>
 								<Insets left="10.0" />
 							</GridPane.margin>
 						</TextField>
-						<TextField fx:id="txtStudentName" GridPane.columnIndex="1" GridPane.rowIndex="2">
-						<TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+						<TextField fx:id="txtStudentName" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
 							<GridPane.margin>
 								<Insets left="10.0" />
 							</GridPane.margin>
 						</TextField>
-						<TextField fx:id="txtIdentification" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
 						<TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
 							<GridPane.margin>
 								<Insets left="10.0" />
 							</GridPane.margin>
 						</TextField>
-						<TextField fx:id="txtAddress" GridPane.columnIndex="1" GridPane.rowIndex="6">
-						<TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="6">
+						<TextField fx:id="txtAddress" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="6">
 							<GridPane.margin>
 								<Insets left="10.0" />
 							</GridPane.margin>
 						</TextField>
 						<TextField fx:id="txtPhone" GridPane.columnIndex="1" GridPane.rowIndex="7">
-						<TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="7">
 							<GridPane.margin>
 								<Insets left="10.0" />
 							</GridPane.margin>
