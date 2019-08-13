@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
@@ -62,3 +63,69 @@
    </top>
 </BorderPane>
 
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1100.0" style="-fx-background-image: url('C:\Users\User\Desktop\자바미니프로젝트이미지');" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <AnchorPane prefHeight="27.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar layoutY="1.0" prefHeight="25.0" prefWidth="1100.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="학적">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="기본정보" />
+                        <MenuItem mnemonicParsing="false" text="학적정보" />
+                        <MenuItem mnemonicParsing="false" text="휴학신청" />
+                        <MenuItem mnemonicParsing="false" text="복학신청" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="수업">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="시간표조회" />
+                        <MenuItem mnemonicParsing="false" text="성적조회" />
+                        <MenuItem mnemonicParsing="false" text="수강신청" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="등록">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="납부내역조회" />
+                        <MenuItem mnemonicParsing="false" text="고지서" />
+                        <MenuItem mnemonicParsing="false" text="납부하기" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <TextField editable="false" layoutX="844.0" layoutY="1.0" prefHeight="19.0" prefWidth="63.0" />
+            <Label layoutX="910.0" layoutY="1.0" prefHeight="24.0" prefWidth="108.0" text=" 님 환영합니다~" />
+            <ImageView fitHeight="25.0" fitWidth="76.0" layoutX="1019.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/홈버튼.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="1043.0" prefHeight="25.0" prefWidth="57.0" text="   Home" textFill="#7369ff">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>
+
+>>>>>>> branch 'master' of https://github.com/jiwonnie0410/javaMiniProject.git
