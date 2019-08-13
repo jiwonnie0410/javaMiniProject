@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="728.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="728.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaMiniProject.view.InformController">
 	<children>
 		<GridPane prefHeight="728.0" prefWidth="876.0">
 			<columnConstraints>
@@ -114,56 +114,38 @@
 								<Insets />
 							</opaqueInsets>
 						</Label>
-<<<<<<< HEAD
 						<TextField fx:id="txtStudentNumber" editable="false" prefHeight="23.0" prefWidth="126.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-=======
 						<TextField editable="false" prefHeight="23.0" prefWidth="126.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
->>>>>>> branch 'master' of https://github.com/jiwonnie0410/javaMiniProject.git
 							<GridPane.margin>
 								<Insets left="10.0" />
 							</GridPane.margin>
 						</TextField>
-<<<<<<< HEAD
 						<TextField fx:id="txtMajorName" GridPane.columnIndex="1" GridPane.rowIndex="5">
-=======
 						<TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="5">
->>>>>>> branch 'master' of https://github.com/jiwonnie0410/javaMiniProject.git
 							<GridPane.margin>
 								<Insets left="10.0" />
 							</GridPane.margin>
 						</TextField>
-<<<<<<< HEAD
 						<TextField fx:id="txtStudentName" GridPane.columnIndex="1" GridPane.rowIndex="2">
-=======
 						<TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
->>>>>>> branch 'master' of https://github.com/jiwonnie0410/javaMiniProject.git
 							<GridPane.margin>
 								<Insets left="10.0" />
 							</GridPane.margin>
 						</TextField>
-<<<<<<< HEAD
 						<TextField fx:id="txtIdentification" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
-=======
 						<TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
->>>>>>> branch 'master' of https://github.com/jiwonnie0410/javaMiniProject.git
 							<GridPane.margin>
 								<Insets left="10.0" />
 							</GridPane.margin>
 						</TextField>
-<<<<<<< HEAD
 						<TextField fx:id="txtAddress" GridPane.columnIndex="1" GridPane.rowIndex="6">
-=======
 						<TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="6">
->>>>>>> branch 'master' of https://github.com/jiwonnie0410/javaMiniProject.git
 							<GridPane.margin>
 								<Insets left="10.0" />
 							</GridPane.margin>
 						</TextField>
-<<<<<<< HEAD
 						<TextField fx:id="txtPhone" GridPane.columnIndex="1" GridPane.rowIndex="7">
-=======
 						<TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="7">
->>>>>>> branch 'master' of https://github.com/jiwonnie0410/javaMiniProject.git
 							<GridPane.margin>
 								<Insets left="10.0" />
 							</GridPane.margin>

@@ -23,7 +23,7 @@ public class ProjectMain extends Application {
 		initRootLayout();
 
 		// 3 부서 관리 페이지 border center에 연결
-		showHomeView();
+//		showHomeView();
 
 	}
 
@@ -41,14 +41,14 @@ public class ProjectMain extends Application {
 		}
 	}
 
-	public void showHomeView() {
-		try {
-			BorderPane homeView = FXMLLoader.load(getClass().getResource("view/HomeView.fxml"));
-			rootLayout.setCenter(homeView);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+//	public void showHomeView() {
+//		try {
+//			BorderPane homeView = FXMLLoader.load(getClass().getResource("view/HomeView.fxml"));
+//			rootLayout.setCenter(homeView);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//	}
 
 	public static void main(String[] args) {
 		launch(args);
