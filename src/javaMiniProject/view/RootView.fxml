@@ -19,7 +19,7 @@
             <MenuBar fx:id="menuBar" layoutY="1.0" prefHeight="25.0" prefWidth="1100.0">
               <menus>
                 <Menu mnemonicParsing="false" text="학적">
-                  <items>
+                  <items> 
                     <MenuItem onAction="#handlePageBasicInform" mnemonicParsing="false" text="기본정보" />
                         <MenuItem onAction="#handlePageSchoolInform" mnemonicParsing="false" text="학적정보" />
                         <MenuItem onAction="#handlePageBreak" mnemonicParsing="false" text="휴학신청" />
