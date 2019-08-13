@@ -24,8 +24,6 @@ public class StudentInformDAO {
 	
 	// 기본 정보
 	public List<Map<String, Object>> basicInform(Connection conn, int stuNumber) throws SQLException {
-		Students stu = new Students();
-		Majors major = new Majors();
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		
 		String sql = "SELECT S.S_NUMBER, S.S_NAME, S.PHONE, S.ADDRESS, M.MAJOR, IDENTIFICATION S.GENDER" + 
@@ -39,21 +37,12 @@ public class StudentInformDAO {
 			map.put("studentNumber", stuNumber);
 			map.put("studentName", rs.getString("S.S_NAME"));
 			map.put("phone", rs.getString("S.PHONE"));
-			map.put(key, value)
-			
-			
-			
-			
-			stu.setStudentNumber(stuNumber); // 학번
-			stu.setStudentName(rs.getString("S.S_NAME")); // 이름
-			stu.setPhone(rs.getString("S.PHONE")); // 폰번호
-			stu.setAddress(rs.getString("S.ADDRESS")); // 주소
-			major.setMajorName(rs.getString("M.MAJOR")); // 전공 이름
-			stu.setIdentification(rs.getString("IDENTIFICATION")); // 주민번호
-			stu.setGender(rs.getString("S.GENDER")); // 성별
-			arrayList.add(stu);
-			arrayList.add(major);
-			return arrayList;
+			map.put("address", rs.getString("S.ADDRESS"));
+			map.put("majorName", rs.getString("M.MAJOR"));
+			map.put("identification", rs.getString("IDENTIFICATION"));
+			map.put("gender", rs.getString("S.GENDER"));
+			list.add(map);
+			return list;
 		}
 		else
 			return null;
