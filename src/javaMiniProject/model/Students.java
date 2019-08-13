@@ -9,17 +9,9 @@ public class Students {
 	String phone;
 	String address;
 	int majorNumber;
-	String majorName;
 	String gender;
 	String degree;
-	String collegeName;
 	
-	public String getCollegeName() {
-		return collegeName;
-	}
-	public void setCollegeName(String collegeName) {
-		this.collegeName = collegeName;
-	}
 	public String getGender() {
 		return gender;
 	}
@@ -32,12 +24,7 @@ public class Students {
 	public void setDegree(String degree) {
 		this.degree = degree;
 	}
-	public String getMajorName() {
-		return majorName;
-	}
-	public void setMajorName(String majorName) {
-		this.majorName = majorName;
-	}
+	
 	public int getStudentNumber() {
 		return studentNumber;
 	}

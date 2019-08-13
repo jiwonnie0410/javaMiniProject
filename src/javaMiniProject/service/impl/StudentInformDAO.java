@@ -4,7 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
+import javaMiniProject.model.Colleges;
+import javaMiniProject.model.Majors;
 import javaMiniProject.model.Students;
 
 public class StudentInformDAO {
@@ -17,8 +20,11 @@ public class StudentInformDAO {
 	}
 	
 	// 기본 정보
-	public Students basicInform(Connection conn, int stuNumber) throws SQLException {
+	public ArrayList basicInform(Connection conn, int stuNumber) throws SQLException {
 		Students stu = new Students();
+		Majors major = new Majors();
+		ArrayList<Students, Majors> arrayList = new ArrayList<>();
+		
 		String sql = "SELECT S.S_NUMBER, S.S_NAME, S.PHONE, S.ADDRESS, M.MAJOR, IDENTIFICATION S.GENDER" + 
 				" FROM STUDENTS S, MAJORS M" + 
 				" WHERE S.MAJOR_NUMBER = M.MAJOR_NUMBER AND S.S_NUMBER = ?";
@@ -30,10 +36,12 @@ public class StudentInformDAO {
 			stu.setStudentName(rs.getString("S.S_NAME")); // 이름
 			stu.setPhone(rs.getString("S.PHONE")); // 폰번호
 			stu.setAddress(rs.getString("S.ADDRESS")); // 주소
-			stu.setMajorName(rs.getString("M.MAJOR")); // 전공이름
+			major.setMajorName(rs.getString("M.MAJOR")); // 전공 이름
 			stu.setIdentification(rs.getString("IDENTIFICATION")); // 주민번호
 			stu.setGender(rs.getString("S.GENDER")); // 성별
-			return stu;
+			arrayList.add(stu);
+			arrayList.add(major);
+			return arrayList;
 		}
 		else
 			return null;
@@ -42,6 +50,9 @@ public class StudentInformDAO {
 	// 학적 정보
 	public Students schoolInform(Connection conn, int stuNumber) throws SQLException {
 		Students stu = new Students();
+		Colleges coll = new Colleges();
+		Majors major = new Majors();
+		
 		String sql = "SELECT S.S_NUMBER, S.S_NAME, S.STATUS, S.COMPLETE, M.MAJOR, S.DEGREE," + 
 				"        (select c.college_name" + 
 				"        from colleges c, majors m" + 
@@ -57,9 +68,9 @@ public class StudentInformDAO {
 			stu.setStudentName(rs.getString("S.S_NAME")); // 이름
 			stu.setStatus(rs.getString("S.STATUS")); // 재적상태: 재학 휴학 졸업
 			stu.setComplete(rs.getInt("S.COMPLETE")); // 수료학기: 1~8학기
-			stu.setMajorName(rs.getString("M.MAJOR")); // 전공이름
+			major.setMajorName(rs.getString("M.MAJOR")); // 전공이름
 			stu.setDegree(rs.getString("S.DEGREE")); // 학사 석사 박사
-			stu.setCollegeName(rs.getString("단대")); // 단대이름
+			coll.setCollegeName(rs.getString("단대"));
 			return stu;
 		}
 		else
