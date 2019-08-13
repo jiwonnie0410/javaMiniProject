@@ -5,6 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javaMiniProject.model.Colleges;
 import javaMiniProject.model.Majors;
@@ -20,10 +23,10 @@ public class StudentInformDAO {
 	}
 	
 	// 기본 정보
-	public ArrayList basicInform(Connection conn, int stuNumber) throws SQLException {
+	public List<Map<String, Object>> basicInform(Connection conn, int stuNumber) throws SQLException {
 		Students stu = new Students();
 		Majors major = new Majors();
-		ArrayList<Students, Majors> arrayList = new ArrayList<>();
+		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		
 		String sql = "SELECT S.S_NUMBER, S.S_NAME, S.PHONE, S.ADDRESS, M.MAJOR, IDENTIFICATION S.GENDER" + 
 				" FROM STUDENTS S, MAJORS M" + 
@@ -32,6 +35,15 @@ public class StudentInformDAO {
 		pstmt.setInt(1, stuNumber);
 		ResultSet rs = pstmt.executeQuery();
 		if (rs.next()) {
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("studentNumber", stuNumber);
+			map.put("studentName", rs.getString("S.S_NAME"));
+			map.put("phone", rs.getString("S.PHONE"));
+			map.put(key, value)
+			
+			
+			
+			
 			stu.setStudentNumber(stuNumber); // 학번
 			stu.setStudentName(rs.getString("S.S_NAME")); // 이름
 			stu.setPhone(rs.getString("S.PHONE")); // 폰번호

@@ -1,12 +1,15 @@
 package javaMiniProject.service;
 
+import java.util.List;
+import java.util.Map;
+
 import javaMiniProject.model.Students;
 
 public interface StudentInformService {
 	
-	Students basicInform(int stuNum);
+	List<Map<String, Object>> basicInform(int stuNum);
 	
-	Students schoolInform(int stuNum);
+	List<Map<String, Object>> schoolInform(int stuNum);
 	
 	void breakApply(int stuNum);
 	

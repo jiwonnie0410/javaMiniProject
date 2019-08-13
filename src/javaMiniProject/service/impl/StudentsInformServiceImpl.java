@@ -2,6 +2,8 @@ package javaMiniProject.service.impl;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
 
 import javaMiniProject.common.DAO;
 import javaMiniProject.model.Students;
@@ -18,7 +20,7 @@ public class StudentsInformServiceImpl implements StudentInformService {
 	}
 
 	@Override
-	public Students basicInform(int stuNum) {
+	public List<Map<String, Object>> basicInform(int stuNum) {
 		Connection conn = DAO.getConnect();
 		Students stu = new Students();
 		try {
@@ -29,11 +31,11 @@ public class StudentsInformServiceImpl implements StudentInformService {
 		} finally {
 			DAO.close(conn);
 		}
-		return stu;
+		return null;
 	}
 
 	@Override
-	public Students schoolInform(int stuNum) {
+	public List<Map<String, Object>> schoolInform(int stuNum) {
 		// TODO Auto-generated method stub
 		return null;
 	}
