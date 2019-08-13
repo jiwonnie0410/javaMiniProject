@@ -25,6 +25,7 @@ public class InformController implements Initializable {
 	@FXML private TextField txtAddress;
 	@FXML private TextField txtPhone;
 	@FXML private TextField txtIdentification;
+	@FXML private TextField txtGender;
 //	@FXML private ComboBox comboGender;
 	
 	
