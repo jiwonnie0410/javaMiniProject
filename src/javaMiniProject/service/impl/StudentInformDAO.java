@@ -26,7 +26,7 @@ public class StudentInformDAO {
 	public List<Map<String, Object>> basicInform(Connection conn, int stuNumber) throws SQLException {
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		
-		String sql = "SELECT S.S_NUMBER, S.S_NAME, S.PHONE, S.ADDRESS, M.MAJOR, IDENTIFICATION S.GENDER" + 
+		String sql = "SELECT S.S_NUMBER, S.S_NAME, S.PHONE, S.ADDRESS, M.MAJOR, IDENTIFICATION, S.GENDER" + 
 				" FROM STUDENTS S, MAJORS M" + 
 				" WHERE S.MAJOR_NUMBER = M.MAJOR_NUMBER AND S.S_NUMBER = ?";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -35,12 +35,12 @@ public class StudentInformDAO {
 		if (rs.next()) {
 			Map<String, Object> map = new HashMap<String, Object>();
 			map.put("studentNumber", stuNumber);
-			map.put("studentName", rs.getString("S.S_NAME"));
-			map.put("phone", rs.getString("S.PHONE"));
-			map.put("address", rs.getString("S.ADDRESS"));
-			map.put("majorName", rs.getString("M.MAJOR"));
+			map.put("studentName", rs.getString("S_NAME"));
+			map.put("phone", rs.getString("PHONE"));
+			map.put("address", rs.getString("ADDRESS"));
+			map.put("majorName", rs.getString("MAJOR"));
 			map.put("identification", rs.getString("IDENTIFICATION"));
-			map.put("gender", rs.getString("S.GENDER"));
+			map.put("gender", rs.getString("GENDER"));
 			list.add(map);
 			return list;
 		}
