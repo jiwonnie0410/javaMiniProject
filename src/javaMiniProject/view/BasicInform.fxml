@@ -39,8 +39,8 @@
 					<children>
 						<AnchorPane prefHeight="42.0" prefWidth="280.0">
 							<children>
-								<Button fx:id="btnDelete" layoutX="144.0" layoutY="1.0" mnemonicParsing="false" text="삭제" />
-								<Button fx:id="btnUpdate" layoutX="85.0" layoutY="1.0" mnemonicParsing="false" text="수정" />
+								<Button layoutX="144.0" layoutY="1.0" mnemonicParsing="false" text="삭제" />
+								<Button layoutX="85.0" layoutY="1.0" mnemonicParsing="false" text="수정" />
 							</children>
 						</AnchorPane>
 					</children>
@@ -115,37 +115,37 @@
 								<Insets />
 							</opaqueInsets>
 						</Label>
-						<TextField fx:id="txtStudentNumber" editable="false" prefHeight="23.0" prefWidth="126.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+						<TextField editable="false" prefHeight="23.0" prefWidth="126.0" text="2000000" GridPane.columnIndex="1" GridPane.rowIndex="1">
 							<GridPane.margin>
 								<Insets left="10.0" />
 							</GridPane.margin>
 						</TextField>
-						<TextField fx:id="txtMajorName" text="생물학" GridPane.columnIndex="1" GridPane.rowIndex="5">
+						<TextField text="생물학" GridPane.columnIndex="1" GridPane.rowIndex="5">
 							<GridPane.margin>
 								<Insets left="10.0" />
 							</GridPane.margin>
 						</TextField>
-						<TextField fx:id="txtStudentName" text="김냥냥" GridPane.columnIndex="1" GridPane.rowIndex="2">
+						<TextField text="김냥냥" GridPane.columnIndex="1" GridPane.rowIndex="2">
 							<GridPane.margin>
 								<Insets left="10.0" />
 							</GridPane.margin>
 						</TextField>
-						<TextField fx:id="txtCollegeName" editable="false" text="자연과학대학" GridPane.columnIndex="1" GridPane.rowIndex="4">
+						<TextField editable="false" text="자연과학대학" GridPane.columnIndex="1" GridPane.rowIndex="4">
 							<GridPane.margin>
 								<Insets left="10.0" />
 							</GridPane.margin>
 						</TextField>
-						<TextField fx:id="txtAddress" text="집사네집" GridPane.columnIndex="1" GridPane.rowIndex="6">
+						<TextField text="집사네집" GridPane.columnIndex="1" GridPane.rowIndex="6">
 							<GridPane.margin>
 								<Insets left="10.0" />
 							</GridPane.margin>
 						</TextField>
-						<TextField fx:id="txtPhone" text="000-0000-0000" GridPane.columnIndex="1" GridPane.rowIndex="7">
+						<TextField text="000-0000-0000" GridPane.columnIndex="1" GridPane.rowIndex="7">
 							<GridPane.margin>
 								<Insets left="10.0" />
 							</GridPane.margin>
 						</TextField>
-						<ComboBox fx:id="comboGender" prefHeight="23.0" prefWidth="77.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+						<ComboBox prefHeight="23.0" prefWidth="77.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <GridPane.margin>
                         <Insets left="10.0" />
                      </GridPane.margin></ComboBox>
