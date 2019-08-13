@@ -6,6 +6,7 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -13,6 +14,7 @@ public class ProjectMain extends Application {
 
 	private Stage primaryStage;
 	private BorderPane rootLayout;
+	private AnchorPane loginLayout;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -20,23 +22,39 @@ public class ProjectMain extends Application {
 		this.primaryStage = primaryStage;
 
 		// 2 Initialize RootLayout
-		initRootLayout();
+//		initRootLayout();
+		
+		loginLayout();
 
 		// 3 부서 관리 페이지 border center에 연결
 //		showHomeView();
 
 	}
 
-	public void initRootLayout() {
+//	public void initRootLayout() {
+//		try {
+//			rootLayout = FXMLLoader.load(getClass().getResource("view/RootView.fxml"));
+//			Scene scene = new Scene(rootLayout, 650, 450);
+//
+//			primaryStage.setTitle("이거는 창에 뜨는 글자");
+//			primaryStage.setScene(scene);
+//			primaryStage.show();
+//
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
+	
+	public void loginLayout() {
 		try {
-			rootLayout = FXMLLoader.load(getClass().getResource("view/RootView.fxml"));
-			Scene scene = new Scene(rootLayout, 650, 450);
-
-			primaryStage.setTitle("이거는 창에 뜨는 글자");
+			loginLayout = FXMLLoader.load(getClass().getResource("view/LoginView.fxml"));
+			Scene scene = new Scene(loginLayout, 650, 450);
+			
+			primaryStage.setTitle("로그인 화면");
 			primaryStage.setScene(scene);
 			primaryStage.show();
-
-		} catch (Exception e) {
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
