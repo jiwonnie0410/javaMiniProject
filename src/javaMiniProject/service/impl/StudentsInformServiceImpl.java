@@ -22,7 +22,6 @@ public class StudentsInformServiceImpl implements StudentInformService {
 
 	@Override
 	public List<Map<String, Object>> basicInform(int stuNum) {
-		
 		Connection conn = DAO.getConnect();
 		List<Map<String, Object>> list = new ArrayList<>();
 

@@ -28,11 +28,11 @@ public class LoginController {
 	public void handleLogin(ActionEvent actionEvent) throws SQLException {
 		int id = Integer.parseInt(txtId.getText());
 		int password = Integer.parseInt(txtPassword.getText());
-//		boolean success = false;
-		int rId = LoginServiceImpl.getInstance().login(id, password);
-//		success = LoginServiceImpl.getInstance().login(id, password);
+		boolean success;
+		success = LoginServiceImpl.getInstance().login(id, password);
+//		int rId = LoginServiceImpl.getInstance().login(id, password);
 
-		if (rId != 0) {
+		if (success = true) {
 			// 루트뷰로 들어가게 만들어야 함
 			System.out.println("로그인 성공");
 			try {

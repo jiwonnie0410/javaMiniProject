@@ -15,6 +15,17 @@ public class ProjectMain extends Application {
 	private Stage primaryStage;
 //	private BorderPane rootLayout;
 	private AnchorPane loginLayout;
+	
+	public int id;
+	
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {

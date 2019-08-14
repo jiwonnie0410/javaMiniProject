@@ -13,9 +13,9 @@ public class LoginServiceImpl {
 		return instance;
 	}
 	
-	public int login(int id, int password) {
+	public boolean login(int id, int password) {
 		Connection conn = DAO.getConnect();
-		int success = 0;
+		boolean success = false;
 		try {
 			success = LoginDAO.getInstance().Login(conn, id, password);
 		} catch (SQLException e) {
