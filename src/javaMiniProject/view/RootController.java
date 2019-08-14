@@ -75,7 +75,7 @@ public class RootController {
 	@FXML // 수강 신청
 	public void handlePageSugang(ActionEvent actionEvent) {
 		try {
-			AnchorPane breakApply = FXMLLoader.load(getClass().getResource("BackApply.fxml"));
+			AnchorPane breakApply = FXMLLoader.load(getClass().getResource("SugangView.fxml"));
 			borderPane.setCenter(breakApply);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

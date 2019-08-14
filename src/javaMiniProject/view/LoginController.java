@@ -3,6 +3,7 @@ package javaMiniProject.view;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javaMiniProject.ProjectMain;
 import javaMiniProject.service.impl.LoginServiceImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -36,6 +37,7 @@ public class LoginController {
 			// 루트뷰로 들어가게 만들어야 함
 			System.out.println("로그인 성공");
 			try {
+				ProjectMain.ID = id;
 				Stage nextStage = (Stage) btnLogin.getScene().getWindow();
 				borderPane = FXMLLoader.load(getClass().getResource("RootView.fxml"));
 				Scene scene = new Scene(borderPane, 650, 450);

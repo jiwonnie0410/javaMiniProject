@@ -8,7 +8,6 @@ import java.util.Map;
 
 import javaMiniProject.common.DAO;
 import javaMiniProject.service.StudentInformService;
-import javaMiniProject.view.LoginController;
 
 public class StudentsInformServiceImpl implements StudentInformService {
 	StudentInformDAO informDAO = StudentInformDAO.getInstance();
@@ -21,12 +20,12 @@ public class StudentsInformServiceImpl implements StudentInformService {
 	}
 
 	@Override
-	public List<Map<String, Object>> basicInform(int stuNum) {
+	public List<Map<String, Object>> basicInform() {
 		Connection conn = DAO.getConnect();
 		List<Map<String, Object>> list = new ArrayList<>();
 
 		try {
-			list = informDAO.basicInform(conn, stuNum);
+			list = informDAO.basicInform(conn);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -36,13 +35,13 @@ public class StudentsInformServiceImpl implements StudentInformService {
 	}
 
 	@Override
-	public List<Map<String, Object>> schoolInform(int stuNum) {
+	public List<Map<String, Object>> schoolInform() {
 
 		Connection conn = DAO.getConnect();
 		List<Map<String, Object>> list = new ArrayList<>();
 
 		try {
-			list = informDAO.schoolInform(conn, stuNum);
+			list = informDAO.schoolInform(conn);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -53,10 +52,10 @@ public class StudentsInformServiceImpl implements StudentInformService {
 	}
 
 	@Override
-	public void breakApply(int stuNum, int semester, String reason) {
+	public void breakApply(int semester, String reason) {
 		Connection conn = DAO.getConnect();
 		try {
-			informDAO.breakApply(conn, stuNum, semester, reason);
+			informDAO.breakApply(conn, semester, reason);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -67,11 +66,11 @@ public class StudentsInformServiceImpl implements StudentInformService {
 	}
 
 	@Override
-	public void backApply(int stuNum, int semester) {
+	public void backApply(int semester) {
 
 		Connection conn = DAO.getConnect();
 		try {
-			informDAO.backApply(conn, stuNum, semester);
+			informDAO.backApply(conn, semester);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -39,14 +39,14 @@ public class BreakApplyController implements Initializable {
 			else
 				semester = 2;
 			reason = txtReason.getText();
-			StudentsInformServiceImpl.getInstance().breakApply(id, semester, reason);
+			StudentsInformServiceImpl.getInstance().breakApply(semester, reason);
 		}
 		else if(radioBack.isSelected()) {
 			if(radioFirst.isSelected())
 				semester = 1;
 			else
 				semester = 2;
-			StudentsInformServiceImpl.getInstance().backApply(id, semester);
+			StudentsInformServiceImpl.getInstance().backApply(semester);
 		}
 	}
 	

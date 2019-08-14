@@ -16,16 +16,8 @@ public class ProjectMain extends Application {
 //	private BorderPane rootLayout;
 	private AnchorPane loginLayout;
 	
-	public int id;
+	public static int ID = 0;
 	
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -41,20 +33,6 @@ public class ProjectMain extends Application {
 //		showHomeView();
 
 	}
-
-//	public void initRootLayout() {
-//		try {
-//			rootLayout = FXMLLoader.load(getClass().getResource("view/RootView.fxml"));
-//			Scene scene = new Scene(rootLayout, 650, 450);
-//
-//			primaryStage.setTitle("이거는 창에 뜨는 글자");
-//			primaryStage.setScene(scene);
-//			primaryStage.show();
-//
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//	}
 	
 	public void loginLayout() {
 		try {
@@ -70,7 +48,21 @@ public class ProjectMain extends Application {
 			e.printStackTrace();
 		}
 	}
-
+	
+//	public void initRootLayout() {
+//		try {
+//			rootLayout = FXMLLoader.load(getClass().getResource("view/RootView.fxml"));
+//			Scene scene = new Scene(rootLayout, 650, 450);
+//
+//			primaryStage.setTitle("이거는 창에 뜨는 글자");
+//			primaryStage.setScene(scene);
+//			primaryStage.show();
+//
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
+	
 //	public void showHomeView() {
 //		try {
 //			BorderPane homeView = FXMLLoader.load(getClass().getResource("view/HomeView.fxml"));

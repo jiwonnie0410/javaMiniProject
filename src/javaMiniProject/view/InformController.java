@@ -38,13 +38,14 @@ public class InformController implements Initializable {
 		// TODO Auto-generated method stub
 		// 학번 이름 폰번호 주소 전공 주민번호 성별
 		List<Map<String, Object>> list = new ArrayList<>();
-		list = StudentsInformServiceImpl.getInstance().basicInform(1001);
+		list = StudentsInformServiceImpl.getInstance().basicInform();
 		txtStudentNumber.setText(list.get(0).get("studentNumber").toString());
 		txtStudentName.setText(list.get(0).get("studentName").toString());
 		txtPhone.setText(list.get(0).get("phone").toString());
 		txtAddress.setText(list.get(0).get("address").toString());
 		txtMajorName.setText(list.get(0).get("majorName").toString());
 		txtIdentification.setText(list.get(0).get("identification").toString());
+		txtGender.setText(list.get(0).get("gender").toString());
 //	comboGender.setItem(list.get(6).get("gender").toString());
 
 	}

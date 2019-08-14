@@ -24,13 +24,13 @@ public class SchoolInformController implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		List<Map<String, Object>> list = new ArrayList<>();
-		list = StudentsInformServiceImpl.getInstance().schoolInform(1001);
+		list = StudentsInformServiceImpl.getInstance().schoolInform();
 		txtStudentNumber.setText(list.get(0).get("studentNumber").toString());
 		txtStudentName.setText(list.get(0).get("studentName").toString());
 		txtMajorName.setText(list.get(0).get("majorName").toString());
 		txtComplete.setText(list.get(0).get("complete").toString());
 		txtDegree.setText(list.get(0).get("degree").toString());
-//		txtStatus.setText(list.get(0).get("status").toString());
+		txtStatus.setText(list.get(0).get("status").toString());
 //		txtCollege.setText(list.get(0).get("college").toString());
 	}
 
