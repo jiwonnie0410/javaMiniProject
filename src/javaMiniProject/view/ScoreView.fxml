@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaMiniProject.view.ScoreController">
    <children>
       <TabPane layoutX="-1.0" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -18,18 +17,18 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="354.0" prefWidth="529.0">
                      <children>
-                        <TableView layoutY="-2.0" prefHeight="312.0" prefWidth="600.0">
+                        <TableView fx:id="tvScore" layoutY="-2.0" prefHeight="312.0" prefWidth="600.0">
                           <columns>
-                            <TableColumn prefWidth="56.0" text="No" />
-                              <TableColumn prefWidth="74.0" text="연도" />
-                            <TableColumn prefWidth="77.0" text="학년" />
-                              <TableColumn prefWidth="84.0" text="과목코드" />
-                              <TableColumn prefWidth="166.0" text="과목명" />
-                              <TableColumn prefWidth="78.0" text="학점" />
-                              <TableColumn prefWidth="64.0" text="성적" />
+                            <TableColumn fx:id="columnNumber" prefWidth="56.0" text="No" />
+                              <TableColumn fx:id="columnYear" prefWidth="74.0" text="연도" />
+                            <TableColumn  fx:id="columnStudentGrade" prefWidth="77.0" text="학년" />
+                              <TableColumn fx:id="columnCourseCode" prefWidth="84.0" text="과목코드" />
+                              <TableColumn fx:id="columnCourseName" prefWidth="159.0" text="과목명" />
+                              <TableColumn fx:id="columnCoursePoint" prefWidth="85.0" text="신청학점" />
+                              <TableColumn fx:id="columnGrade" prefWidth="64.0" text="성적" />
                           </columns>
                         </TableView>
-                        <Label alignment="CENTER" layoutX="368.0" layoutY="322.0" prefHeight="33.0" prefWidth="58.0" text="총점">
+                        <Label alignment="CENTER" layoutX="368.0" layoutY="322.0" prefHeight="33.0" prefWidth="58.0" text="평점">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -50,7 +49,6 @@
                               <TableColumn prefWidth="73.0" text="학기" />
                               <TableColumn prefWidth="73.0" text="학년" />
                               <TableColumn prefWidth="97.0" text="신청학점" />
-                              <TableColumn prefWidth="95.0" text="취득학점" />
                               <TableColumn prefWidth="111.0" text="평점" />
                            </columns>
                         </TableView>
