@@ -64,6 +64,7 @@ public class ProjectMain extends Application {
 			primaryStage.setTitle("로그인 화면");
 			primaryStage.setScene(scene);
 			primaryStage.show();
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
