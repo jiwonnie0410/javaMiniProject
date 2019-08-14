@@ -1,8 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<GridPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</GridPane>
 
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane layoutX="-1.0" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="전체성적">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="354.0" prefWidth="529.0">
+                     <children>
+                        <TableView layoutY="-2.0" prefHeight="312.0" prefWidth="600.0">
+                          <columns>
+                            <TableColumn prefWidth="56.0" text="No" />
+                              <TableColumn prefWidth="74.0" text="연도" />
+                            <TableColumn prefWidth="77.0" text="학년" />
+                              <TableColumn prefWidth="84.0" text="과목코드" />
+                              <TableColumn prefWidth="166.0" text="과목명" />
+                              <TableColumn prefWidth="78.0" text="학점" />
+                              <TableColumn prefWidth="64.0" text="성적" />
+                          </columns>
+                        </TableView>
+                        <Label alignment="CENTER" layoutX="368.0" layoutY="322.0" prefHeight="33.0" prefWidth="58.0" text="총점">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="432.0" layoutY="327.0" prefHeight="23.0" prefWidth="117.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="학기별 성적">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView prefHeight="312.0" prefWidth="600.0">
+                           <columns>
+                              <TableColumn prefWidth="56.0" text="No" />
+                              <TableColumn prefWidth="94.0" text="연도" />
+                              <TableColumn prefWidth="73.0" text="학기" />
+                              <TableColumn prefWidth="73.0" text="학년" />
+                              <TableColumn prefWidth="97.0" text="신청학점" />
+                              <TableColumn prefWidth="95.0" text="취득학점" />
+                              <TableColumn prefWidth="111.0" text="평점" />
+                           </columns>
+                        </TableView>
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="321.0" prefHeight="33.0" prefWidth="99.0" text="총 신청학점">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="100.0" layoutY="326.0" prefHeight="23.0" prefWidth="74.0" />
+                        <Label alignment="CENTER" layoutX="174.0" layoutY="321.0" prefHeight="33.0" prefWidth="99.0" text="총 취득학점">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="277.0" layoutY="325.0" prefHeight="23.0" prefWidth="85.0" />
+                        <Label alignment="CENTER" layoutX="372.0" layoutY="320.0" prefHeight="33.0" prefWidth="99.0" text="총 평점">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="460.0" layoutY="325.0" prefHeight="23.0" prefWidth="88.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
