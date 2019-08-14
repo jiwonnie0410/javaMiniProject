@@ -47,16 +47,6 @@ public class RootController {
 		}
 	}
 	
-	@FXML
-	public void handlePageBack(ActionEvent actionEvent) {
-		try {
-			AnchorPane breakApply = FXMLLoader.load(getClass().getResource("BackApply.fxml"));
-			borderPane.setCenter(breakApply);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 	
 //============================================================================================================
 

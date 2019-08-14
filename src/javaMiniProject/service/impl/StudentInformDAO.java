@@ -9,9 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javaMiniProject.model.Colleges;
-import javaMiniProject.model.Majors;
-import javaMiniProject.model.Students;
+import javaMiniProject.view.LoginController;
 
 public class StudentInformDAO {
 
@@ -24,6 +22,7 @@ public class StudentInformDAO {
 	
 	// 기본 정보
 	public List<Map<String, Object>> basicInform(Connection conn, int stuNumber) throws SQLException {
+		
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		
 		String sql = "SELECT S.S_NUMBER, S.S_NAME, S.PHONE, S.ADDRESS, M.MAJOR, IDENTIFICATION, S.GENDER" + 
@@ -52,15 +51,20 @@ public class StudentInformDAO {
 	public List<Map<String, Object>> schoolInform(Connection conn, int stuNumber) throws SQLException {
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		
-		String sql = "SELECT S.S_NUMBER, S.S_NAME, S.STATUS, S.COMPLETE, M.MAJOR, S.DEGREE," + 
-				"        (select c.college_name" + 
-				"        from colleges c, majors m" + 
-				"        where c.college_number = m.college_number " + 
-				"            and m.major_number = 10) as 단대" + 
-				" FROM STUDENTS S, MAJORS M\r\n" + 
-				" WHERE S.MAJOR_NUMBER = M.MAJOR_NUMBER AND S.S_NUMBER = ?";
+		String sql = "SELECT S.S_NUMBER, S.S_NAME, S.COMPLETE, M.MAJOR, S.DEGREE, \r\n" + 
+				"(SELECT C.COLLEGE_NAME \r\n" + 
+				"FROM COLLEGES C, MAJORS M\r\n" + 
+				"WHERE C.COLLEGE_NUMBER = M.COLLEGE_NUMBER\r\n" + 
+				"AND M.MAJOR_NUMBER = 10) AS 단대,\r\n" + 
+				"(SELECT STATUS\r\n" + 
+				"FROM STATUS\r\n" + 
+				"WHERE S_NUMBER = 1001 AND\r\n" + 
+				"INDEX_NUMBER=(SELECT MAX(INDEX_NUMBER) FROM STATUS)) AS STATUS\r\n" + 
+				"FROM STUDENTS S, MAJORS M\r\n" + 
+				"WHERE S.MAJOR_NUMBER = M.MAJOR_NUMBER AND S.S_NUMBER = 1001";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-		pstmt.setInt(1, stuNumber);
+//		pstmt.setInt(1, stuNumber);
+//		pstmt.setInt(2, stuNumber);
 		ResultSet rs = pstmt.executeQuery();
 		if (rs.next()) {
 			Map<String, Object> map = new HashMap<String, Object>();
@@ -79,23 +83,34 @@ public class StudentInformDAO {
 	}
 	
 	// 휴학 신청
-	public void breakApply(Connection conn, int stuNumber) throws SQLException {
-		String sql = "UPDATE STUDENTS SET STATUS = '휴학' WHERE S_NUMBER = ?";
+	public void breakApply(Connection conn, int stuNumber, int semester, String reason) throws SQLException {
+		String sql = "INSERT INTO STATUS VALUES(?, '휴학', ?, TO_CHAR(SYSDATE, 'YYYY'), ?, BREAK_INDEX.NEXTVAL)";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, stuNumber);
+		pstmt.setInt(3, semester);
+		pstmt.setString(2, reason);
 		
 		int r = pstmt.executeUpdate();
-		System.out.println(r + "건 업데이트 완료~!\n");
+		System.out.println(r + "건 휴학 업데이트 완료\n");
 	}
 	
 	// 복학 신청
-	public void backApply(Connection conn, int stuNumber) throws SQLException {
-		String sql = "UPDATE STUDENTS SET STATUS = '복학' WHERE S_NUMBER = ?";
+	public void backApply(Connection conn, int stuNumber, int semester) throws SQLException {
+		String sql = "INSERT INTO STATUS VALUES(?, '복학', NULL, TO_CHAR(SYSDATE, 'YYYY'), ?, BREAK_INDEX.NEXTVAL)";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, stuNumber);
+		pstmt.setInt(2, semester);
 		
 		int r = pstmt.executeUpdate();
-		System.out.println(r + "건 업데이트 완료~!\n");
+		System.out.println(r + "건 복학 업데이트 완료\n");
 	}
-	
 }
+
+
+
+
+// 지금 재적 상태 알아보는 방법
+//select s_number, status, year, semester
+//from status
+//where index_number = (select max(index_number)
+//        from status) and s_number = 1001;

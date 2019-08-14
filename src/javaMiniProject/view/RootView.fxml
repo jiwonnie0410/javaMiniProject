@@ -22,8 +22,7 @@
                   <items>
                     <MenuItem onAction="#handlePageBasicInform" mnemonicParsing="false" text="기본정보" />
                         <MenuItem onAction="#handlePageSchoolInform" mnemonicParsing="false" text="학적정보" />
-                        <MenuItem mnemonicParsing="false" text="휴학신청" />
-                        <MenuItem mnemonicParsing="false" text="복학신청" />
+                        <MenuItem onAction="#handlePageBreak" mnemonicParsing="false" text="휴학신청" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="수업">
