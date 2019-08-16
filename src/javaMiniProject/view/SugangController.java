@@ -23,38 +23,22 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 public class SugangController implements Initializable {
-	@FXML
-	AnchorPane anchorPane;
-	@FXML
-	ListView<String> listSemester;
-	@FXML
-	ListView<String> listCollege;
-	@FXML
-	ListView<String> listMajor;
-	@FXML
-	Button btnSearch;
-	@FXML
-	Button btnSugang;
-	@FXML
-	TableView<CoursesTable> tvCoures;
-	@FXML
-	TextField txtCode;
-	@FXML
-	TextField txtName;
-	@FXML
-	Button btnShowAll;
-	@FXML
-	TableColumn<CoursesTable, Integer> clCode;
-	@FXML
-	TableColumn<CoursesTable, String> clCourseName;
-	@FXML
-	TableColumn<CoursesTable, Integer> clPoint;
-	@FXML
-	TableColumn<CoursesTable, String> clProfessor;
-	@FXML
-	TableColumn<CoursesTable, String> clTime;
-	@FXML
-	TableColumn<CoursesTable, Integer> clLimit;
+	@FXML	AnchorPane anchorPane;
+	@FXML	ListView<String> listSemester;
+	@FXML	ListView<String> listCollege;
+	@FXML	ListView<String> listMajor;
+	@FXML	Button btnSearch;
+	@FXML	Button btnSugang;
+	@FXML	TableView<CoursesTable> tvCoures;
+	@FXML	TextField txtCode;
+	@FXML	TextField txtName;
+	@FXML	Button btnShowAll;
+	@FXML	TableColumn<CoursesTable, Integer> clCode;
+	@FXML	TableColumn<CoursesTable, String> clCourseName;
+	@FXML	TableColumn<CoursesTable, Integer> clPoint;
+	@FXML	TableColumn<CoursesTable, String> clProfessor;
+	@FXML	TableColumn<CoursesTable, String> clTime;
+	@FXML	TableColumn<CoursesTable, Integer> clLimit;
 
 	private Executor exec;
 
