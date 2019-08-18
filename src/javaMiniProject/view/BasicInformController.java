@@ -6,15 +6,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-import javaMiniProject.service.impl.StudentsInformServiceImpl;
+import javaMiniProject.service.impl.InformationServiceImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
-public class InformController implements Initializable {
+public class BasicInformController implements Initializable {
 	@FXML	private AnchorPane achorPane;
 	@FXML	private Button btnDelete;
 	@FXML	private Button btnUpdate;
@@ -26,6 +28,7 @@ public class InformController implements Initializable {
 	@FXML	private TextField txtPhone;
 	@FXML	private TextField txtIdentification;
 	@FXML	private TextField txtGender;
+	@FXML 	private ImageView ivStudent;
 //	@FXML private ComboBox comboGender;
 
 	@FXML
@@ -38,7 +41,10 @@ public class InformController implements Initializable {
 		// TODO Auto-generated method stub
 		// 학번 이름 폰번호 주소 전공 주민번호 성별
 		List<Map<String, Object>> list = new ArrayList<>();
-		list = StudentsInformServiceImpl.getInstance().basicInform();
+		list = InformationServiceImpl.getInstance().basicInform();
+		
+	    Image image = new Image("image/1001.jpg"); 
+		ivStudent.setImage(image);
 		txtStudentNumber.setText(list.get(0).get("studentNumber").toString());
 		txtStudentName.setText(list.get(0).get("studentName").toString());
 		txtPhone.setText(list.get(0).get("phone").toString());

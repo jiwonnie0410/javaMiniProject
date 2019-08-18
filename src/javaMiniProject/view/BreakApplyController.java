@@ -3,7 +3,7 @@ package javaMiniProject.view;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javaMiniProject.service.impl.StudentsInformServiceImpl;
+import javaMiniProject.service.impl.InformationServiceImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -39,14 +39,14 @@ public class BreakApplyController implements Initializable {
 			else
 				semester = 2;
 			reason = txtReason.getText();
-			StudentsInformServiceImpl.getInstance().breakApply(semester, reason);
+			InformationServiceImpl.getInstance().breakApply(semester, reason);
 		}
 		else if(radioBack.isSelected()) {
 			if(radioFirst.isSelected())
 				semester = 1;
 			else
 				semester = 2;
-			StudentsInformServiceImpl.getInstance().backApply(semester);
+			InformationServiceImpl.getInstance().backApply(semester);
 		}
 	}
 	

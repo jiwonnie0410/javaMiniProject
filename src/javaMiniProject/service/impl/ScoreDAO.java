@@ -31,7 +31,7 @@ public class ScoreDAO {
 		ResultSet rs = pstmt.executeQuery();
 		while (rs.next()) {
 			score = new ScoreTable();
-			score.setCourseCode(rs.getInt("course_number"));//낼 가서 컬럼이름 맞는지 확인하기
+			score.setCourseCode(rs.getInt("course_number"));//낼 가서 컬럼이름 맞는지 확인하기 //course codeㅎㅎㅎ
 			score.setCourseName(rs.getString("course_name"));
 			score.setCoursePoint(rs.getInt("course_point"));
 			score.setGrade(grade);

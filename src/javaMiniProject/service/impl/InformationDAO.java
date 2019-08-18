@@ -11,12 +11,12 @@ import java.util.Map;
 
 import javaMiniProject.ProjectMain;
 
-public class StudentInformDAO {
+public class InformationDAO {
 
 	// singletone
-	private static StudentInformDAO instance = new StudentInformDAO();
+	private static InformationDAO instance = new InformationDAO();
 
-	public static StudentInformDAO getInstance() {
+	public static InformationDAO getInstance() {
 		return instance;
 	}
 	

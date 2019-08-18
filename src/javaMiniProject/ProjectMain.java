@@ -1,20 +1,16 @@
 package javaMiniProject;
 
-
-import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-//import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class ProjectMain extends Application {
 
 	private Stage primaryStage;
-//	private BorderPane rootLayout;
-	private AnchorPane loginLayout;
+	private BorderPane rootLayout;
 	
 	public static int ID = 0;
 	
@@ -25,53 +21,26 @@ public class ProjectMain extends Application {
 		this.primaryStage = primaryStage;
 
 		// 2 Initialize RootLayout
-//		initRootLayout();
-		
-		loginLayout();
-
-		// 3 부서 관리 페이지 border center에 연결
-//		showHomeView();
-
+		initRootLayout();
 	}
 	
-	public void loginLayout() {
+	public void initRootLayout() {
 		try {
-			loginLayout = FXMLLoader.load(getClass().getResource("view/LoginView.fxml"));
-			Scene scene = new Scene(loginLayout, 650, 450);
-			
-			primaryStage.setTitle("로그인 화면");
+			rootLayout = FXMLLoader.load(getClass().getResource("view/RootView.fxml"));
+			Scene scene = new Scene(rootLayout, 1000, 750);
+
+			primaryStage.setTitle("이거는 창에 뜨는 글자");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			AnchorPane homeView = FXMLLoader.load(getClass().getResource("view/HomeView.fxml"));
+			rootLayout.setCenter(homeView);
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
-//	public void initRootLayout() {
-//		try {
-//			rootLayout = FXMLLoader.load(getClass().getResource("view/RootView.fxml"));
-//			Scene scene = new Scene(rootLayout, 650, 450);
-//
-//			primaryStage.setTitle("이거는 창에 뜨는 글자");
-//			primaryStage.setScene(scene);
-//			primaryStage.show();
-//
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//	}
-	
-//	public void showHomeView() {
-//		try {
-//			BorderPane homeView = FXMLLoader.load(getClass().getResource("view/HomeView.fxml"));
-//			rootLayout.setCenter(homeView);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
-
 	public static void main(String[] args) {
 		launch(args);
 	}

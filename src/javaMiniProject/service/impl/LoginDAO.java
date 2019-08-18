@@ -20,7 +20,7 @@ public class LoginDAO {
 		pstmt.setInt(1, id);
 		pstmt.setInt(2, passwd);
 		ResultSet rs = pstmt.executeQuery();
-		if(rs.next()) {
+		if(rs.next() == true) {
 			return true;
 		}
 		else

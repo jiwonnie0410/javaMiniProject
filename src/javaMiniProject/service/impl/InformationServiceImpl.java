@@ -9,13 +9,13 @@ import java.util.Map;
 import javaMiniProject.common.DAO;
 import javaMiniProject.service.StudentInformService;
 
-public class StudentsInformServiceImpl implements StudentInformService {
-	StudentInformDAO informDAO = StudentInformDAO.getInstance();
+public class InformationServiceImpl implements StudentInformService {
+	InformationDAO informDAO = InformationDAO.getInstance();
 
 	// singletone
-	private static StudentsInformServiceImpl instance = new StudentsInformServiceImpl();
+	private static InformationServiceImpl instance = new InformationServiceImpl();
 
-	public static StudentsInformServiceImpl getInstance() {
+	public static InformationServiceImpl getInstance() {
 		return instance;
 	}
 

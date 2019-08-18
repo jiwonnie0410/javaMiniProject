@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-import javaMiniProject.service.impl.StudentsInformServiceImpl;
+import javaMiniProject.service.impl.InformationServiceImpl;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
@@ -24,7 +24,7 @@ public class SchoolInformController implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		List<Map<String, Object>> list = new ArrayList<>();
-		list = StudentsInformServiceImpl.getInstance().schoolInform();
+		list = InformationServiceImpl.getInstance().schoolInform();
 		txtStudentNumber.setText(list.get(0).get("studentNumber").toString());
 		txtStudentName.setText(list.get(0).get("studentName").toString());
 		txtMajorName.setText(list.get(0).get("majorName").toString());

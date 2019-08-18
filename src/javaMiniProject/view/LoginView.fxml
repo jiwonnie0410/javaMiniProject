@@ -10,36 +10,46 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaMiniProject.view.LoginController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaMiniProject.view.RootController">
    <children>
-      <GridPane hgap="10.0" layoutX="216.0" layoutY="260.0" prefHeight="180.0" prefWidth="269.0" vgap="10.0">
+      <GridPane alignment="CENTER" layoutX="308.0" layoutY="199.0" prefHeight="203.0" prefWidth="284.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.0" minWidth="10.0" prefWidth="132.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="139.0" minWidth="10.0" prefWidth="107.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="293.0" minHeight="10.0" prefHeight="181.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="161.0" minHeight="10.0" prefHeight="124.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label prefHeight="41.0" prefWidth="67.0" text="ID">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label text="PASSWORD" GridPane.rowIndex="1">
-               <font>
-                  <Font size="18.0" />
-               </font></Label>
-            <TextField fx:id="txtId" promptText="id" GridPane.columnIndex="1" />
-            <TextField fx:id="txtPassword" promptText="password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button fx:id="btnLogin" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleLogin" prefHeight="23.0" prefWidth="133.0" text="Login" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="140.0" text="Help" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="btnLogin" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#LoginFunction" prefHeight="22.0" prefWidth="308.0" text="Login" GridPane.rowIndex="1" />
+            <GridPane hgap="10.0" prefHeight="177.0" prefWidth="360.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.0" minWidth="10.0" prefWidth="132.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="139.0" minWidth="10.0" prefWidth="107.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="41.0" prefWidth="67.0" text="ID">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="PASSWORD" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtId" promptText="id" GridPane.columnIndex="1" />
+                  <TextField fx:id="txtPassword" promptText="password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </GridPane>
          </children>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
       </GridPane>
    </children>
 </AnchorPane>
