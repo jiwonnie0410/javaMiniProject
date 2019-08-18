@@ -15,6 +15,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -39,11 +40,23 @@ public class SugangController implements Initializable {
 	@FXML	TableColumn<CoursesTable, String> clProfessor;
 	@FXML	TableColumn<CoursesTable, String> clTime;
 	@FXML	TableColumn<CoursesTable, Integer> clLimit;
+	@FXML 	ComboBox<String> comboCollege;
+	@FXML	ComboBox<String> comboMajor;
+	@FXML	ComboBox<String> comboSemester;
 
 	private Executor exec;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		
+		// 콤보 박스 되는지 한번 확인...
+		ObservableList<String> cbsemester = FXCollections.observableArrayList("1학기", "2학기");
+		comboSemester.setItems(cbsemester);
+		ObservableList<String> cbmajor = FXCollections.observableArrayList("컴퓨터공학과", "법학과", "기타등등ㅎㅎ");
+		comboSemester.setItems(cbmajor);
+		ObservableList<String> cbcollege = FXCollections.observableArrayList("공과대학", "인문대학");
+		comboSemester.setItems(cbcollege);
+		
 
 		// 리스트뷰 값 초기화
 		ObservableList<String> semester = FXCollections.observableArrayList("1", "2");
