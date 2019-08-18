@@ -99,8 +99,8 @@
       </GridPane>
       <Button fx:id="btnShowAll" layoutX="332.0" layoutY="228.0" mnemonicParsing="false" onAction="#btnShowAllClicked" prefHeight="23.0" prefWidth="235.0" text="전체 조회" />
       <Button fx:id="btnSearch" layoutX="276.0" layoutY="228.0" mnemonicParsing="false" onAction="#btnShowClicked" prefHeight="23.0" prefWidth="46.0" text="조회" />
-      <ComboBox layoutX="371.0" layoutY="73.0" prefWidth="150.0" />
-      <ComboBox layoutX="371.0" layoutY="117.0" prefWidth="150.0" />
-      <ComboBox layoutX="371.0" layoutY="161.0" prefWidth="150.0" />
+      <ComboBox fx:id="comboCollege" layoutX="371.0" layoutY="73.0" prefWidth="150.0" />
+      <ComboBox fx:id="comboMajor" layoutX="371.0" layoutY="117.0" prefWidth="150.0" />
+      <ComboBox fx:id="comboSemester" layoutX="371.0" layoutY="161.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

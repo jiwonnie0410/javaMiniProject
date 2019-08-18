@@ -3,19 +3,24 @@ package javaMiniProject.view;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 
 public class TimeSheduleController implements Initializable {
-	@FXML ComboBox<String> comboBox;
+	@FXML Label label01;
+	@FXML Label label02;
+	@FXML Label label03;
+	@FXML Label label04;
+	@FXML Label label05;
+	@FXML Label label06;
+	@FXML Label label07;
+	@FXML Label label08;
+	// 근데 시간표 조회해서 걍 바로바로 label = new label 해도 될 듯???
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		ObservableList<String> combo = FXCollections.observableArrayList("공개", "회원공개","비공개");
-		comboBox.setItems(combo);
+		
 	}
 
 }
