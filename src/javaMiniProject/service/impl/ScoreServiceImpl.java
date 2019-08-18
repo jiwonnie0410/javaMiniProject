@@ -21,7 +21,7 @@ public class ScoreServiceImpl {
 		Connection conn = DAO.getConnect();
 		List<ScoreTable> list = null;
 		try {
-			list = scoreDAO.selectAllTable(conn);
+			list = scoreDAO.selectTotalScore(conn);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
