@@ -25,7 +25,7 @@ public class InformationDAO {
 		
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		
-		String sql = "SELECT S.S_NUMBER, S.S_NAME, S.PHONE, S.ADDRESS, M.MAJOR, IDENTIFICATION, S.GENDER" + 
+		String sql = "SELECT S.S_NUMBER, S.S_NAME, S.PHONE, S.ADDRESS, M.MAJOR, IDENTIFICATION, S.GENDER, PICTURE" + 
 				" FROM STUDENTS S, MAJORS M" + 
 				" WHERE S.MAJOR_NUMBER = M.MAJOR_NUMBER AND S.S_NUMBER = ?";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -40,6 +40,7 @@ public class InformationDAO {
 			map.put("majorName", rs.getString("MAJOR"));
 			map.put("identification", rs.getString("IDENTIFICATION"));
 			map.put("gender", rs.getString("GENDER"));
+			map.put("studentPicture", rs.getString("PICTURE"));
 			list.add(map);
 			return list;
 		}

@@ -37,7 +37,6 @@ public class ProjectMain extends Application {
 			rootLayout.setCenter(homeView);
 
 		} catch (Exception e) {
-			e.printStackTrace();
 		}
 	}
 	

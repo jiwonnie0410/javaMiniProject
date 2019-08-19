@@ -3,7 +3,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -36,31 +35,31 @@
             <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
                <children>
                   <Label prefHeight="15.0" prefWidth="70.0" text="단과대학" />
-                  <ListView fx:id="listCollege" prefHeight="20.0" prefWidth="200.0" />
+                  <ComboBox fx:id="comboCollege" prefHeight="26.0" prefWidth="200.0" />
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
                <children>
                   <Label prefHeight="15.0" prefWidth="70.0" text="학기" />
-                  <ListView fx:id="listSemester" prefHeight="20.0" prefWidth="200.0" />
+                  <ComboBox fx:id="comboSemester" prefHeight="26.0" prefWidth="200.0" />
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
                <children>
                   <Label prefHeight="15.0" prefWidth="70.0" text="전공" />
-                  <ListView fx:id="listMajor" prefHeight="20.0" prefWidth="200.0" />
+                  <ComboBox fx:id="comboMajor" prefHeight="26.0" prefWidth="200.0" />
                </children>
             </HBox>
          </children>
       </GridPane>
-      <TableView fx:id="tvCoures" layoutX="30.0" layoutY="266.0" onMouseClicked="#setTextFeildInformation" prefHeight="308.0" prefWidth="839.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="31.0">
+      <TableView fx:id="tvCoures" layoutX="30.0" layoutY="266.0" onMouseClicked="#setTextFeildInformation" prefHeight="308.0" prefWidth="839.0">
         <columns>
-          <TableColumn fx:id="clCode" prefWidth="75.0" text="과목코드" />
-          <TableColumn fx:id="clCourseName" prefWidth="142.0" text="과목명" />
-            <TableColumn fx:id="clPoint" minWidth="2.0" prefWidth="73.0" text="학점" />
-            <TableColumn fx:id="clProfessor" prefWidth="75.0" text="담당교수" />
-            <TableColumn fx:id="clTime" prefWidth="117.0" text="시간표" />
-            <TableColumn fx:id="clLimit" prefWidth="133.0" text="수강여석" />
+          <TableColumn fx:id="clCode" prefWidth="98.0" text="과목코드" />
+          <TableColumn fx:id="clCourseName" prefWidth="198.0" text="과목명" />
+            <TableColumn fx:id="clPoint" minWidth="2.0" prefWidth="109.0" text="학점" />
+            <TableColumn fx:id="clProfessor" prefWidth="127.0" text="담당교수" />
+            <TableColumn fx:id="clTime" prefWidth="179.0" text="시간표" />
+            <TableColumn fx:id="clLimit" prefWidth="127.0" text="수강여석" />
         </columns>
       </TableView>
       <Separator layoutY="213.0" prefHeight="15.0" prefWidth="900.0" />
@@ -92,15 +91,11 @@
             <HBox prefHeight="40.0" prefWidth="272.0">
                <children>
                   <Label prefHeight="15.0" prefWidth="70.0" text="학기" />
-                  <TextField fx:id="txtCode1" editable="false" prefHeight="26.0" prefWidth="200.0" />
+                  <TextField fx:id="txtSemester" editable="false" prefHeight="26.0" prefWidth="200.0" />
                </children>
             </HBox>
          </children>
       </GridPane>
       <Button fx:id="btnShowAll" layoutX="332.0" layoutY="228.0" mnemonicParsing="false" onAction="#btnShowAllClicked" prefHeight="23.0" prefWidth="235.0" text="전체 조회" />
-      <Button fx:id="btnSearch" layoutX="276.0" layoutY="228.0" mnemonicParsing="false" onAction="#btnShowClicked" prefHeight="23.0" prefWidth="46.0" text="조회" />
-      <ComboBox fx:id="comboCollege" layoutX="371.0" layoutY="73.0" prefWidth="150.0" />
-      <ComboBox fx:id="comboMajor" layoutX="371.0" layoutY="117.0" prefWidth="150.0" />
-      <ComboBox fx:id="comboSemester" layoutX="371.0" layoutY="161.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

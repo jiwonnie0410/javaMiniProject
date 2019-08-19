@@ -3,7 +3,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -12,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaMiniProject.view.BreakApplyController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaMiniProject.view.BreakApplyController">
    <children>
       <GridPane layoutX="227.0" layoutY="117.0" prefHeight="314.0" prefWidth="446.0">
         <columnConstraints>
@@ -37,8 +36,7 @@
             </Label>
             <VBox alignment="CENTER" prefHeight="28.0" prefWidth="99.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <RadioButton fx:id="radioBreak" mnemonicParsing="false" text="휴학" />
-                  <RadioButton fx:id="radioBack" mnemonicParsing="false" text="복학" />
+                  <ComboBox fx:id="comboOption" prefWidth="150.0" />
                </children>
             </VBox>
             <Label text="신청 학기">
@@ -49,8 +47,7 @@
             <TextField fx:id="txtReason" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <VBox alignment="CENTER" prefHeight="28.0" prefWidth="99.0" GridPane.columnIndex="1">
                <children>
-                  <RadioButton fx:id="radioFirst" mnemonicParsing="false" text="1학기" />
-                  <RadioButton fx:id="radioSecond" mnemonicParsing="false" text="2학기" />
+                  <ComboBox fx:id="comboSemester" prefWidth="150.0" />
                </children>
             </VBox>
             	
@@ -61,7 +58,5 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <ComboBox fx:id="comboSemester" layoutX="712.0" layoutY="145.0" prefWidth="150.0" />
-      <ComboBox fx:id="comboOption" layoutX="712.0" layoutY="274.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

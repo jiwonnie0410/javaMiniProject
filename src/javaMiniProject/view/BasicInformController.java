@@ -38,11 +38,16 @@ public class BasicInformController implements Initializable {
 		// 학번 이름 폰번호 주소 전공 주민번호 성별
 		List<Map<String, Object>> list = new ArrayList<>();
 		list = InformationServiceImpl.getInstance().basicInform();
-		
-		File file = new File("image/1001.jpg");
-	    Image image = new Image(file.toURI().toString());
-		ivStudent.setImage(image);
 
+//		String address = list.get(0).get("studentPicture").toString();
+		
+		
+		File file = new File("./1001.jpg");
+	    Image image = new Image(file.toURI().toString());
+	    ivStudent.setImage(image);
+
+	    
+	    
 		txtStudentNumber.setText(list.get(0).get("studentNumber").toString());
 		txtStudentName.setText(list.get(0).get("studentName").toString());
 		txtPhone.setText(list.get(0).get("phone").toString());
@@ -50,6 +55,7 @@ public class BasicInformController implements Initializable {
 		txtMajorName.setText(list.get(0).get("majorName").toString());
 		txtIdentification.setText(list.get(0).get("identification").toString());
 		txtGender.setText(list.get(0).get("gender").toString());
+		
 //	comboGender.setItem(list.get(6).get("gender").toString());
 
 	}
