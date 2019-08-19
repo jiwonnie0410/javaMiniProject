@@ -8,7 +8,6 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 import javaMiniProject.model.CoursesTable;
-import javaMiniProject.service.impl.SugangDAO;
 import javaMiniProject.service.impl.SugangServiceImpl;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -84,45 +83,96 @@ public class SugangController implements Initializable {
 		task.setOnSucceeded(e -> tvCoures.setItems((ObservableList<CoursesTable>) task.getValue()));
 		// 작업 실행 시작
 		exec.execute(task);
-		
-		
+
 		// college combobox event 지정
 		comboCollege.valueProperty().addListener(new ChangeListener<String>() {
 
 			@Override
 			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-				onlyCollegeSelected(newValue);
-				
 				ArrayList<String> mList = new ArrayList<>();
 				mList = SugangServiceImpl.getInstance().majorsFromCollege(newValue);
-				
+
 				ObservableList<String> cbmajor = FXCollections.observableArrayList(mList);
 				comboMajor.setItems(cbmajor);
+
+				if (comboMajor.getValue() == null && comboSemester.getValue() == null)
+					onlyCollegeSelected(newValue);
+
+				else if (comboMajor.getValue() == null && comboSemester.getValue() != null) {
+					if (comboSemester.getValue().equals("1학기"))
+						collegeSemester(1);
+					else
+						collegeSemester(2);
+				}
+
+				else if (comboMajor.getValue() != null && comboSemester.getValue() == null)
+					collegeMajorSelected(comboMajor.getValue());
+
+				else if (comboMajor.getValue() != null && comboSemester.getValue() != null) {
+					if (comboSemester.getValue().equals("1학기"))
+						everyOptionSelected(1);
+					else
+						everyOptionSelected(2);
+				}
+
 			}
 		});
-		
+
 		// major combobox event 지정
 		comboMajor.valueProperty().addListener(new ChangeListener<String>() {
 
 			@Override
 			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-				collegeMajorSelected(newValue);
+				if (comboMajor.getValue() == null && comboSemester.getValue() == null)
+					onlyCollegeSelected(newValue);
+
+				else if (comboMajor.getValue() == null && comboSemester.getValue() != null) {
+					if (comboSemester.getValue().equals("1학기"))
+						collegeSemester(1);
+					else
+						collegeSemester(2);
+				}
+
+				else if (comboMajor.getValue() != null && comboSemester.getValue() == null)
+					collegeMajorSelected(comboMajor.getValue());
+
+				else if (comboMajor.getValue() != null && comboSemester.getValue() != null) {
+					if (comboSemester.getValue().equals("1학기"))
+						everyOptionSelected(1);
+					else
+						everyOptionSelected(2);
+				}
 			}
 		});
-		
+
 		// semester combobox event 지정
 		comboSemester.valueProperty().addListener(new ChangeListener<String>() {
-			
+
 			@Override
 			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
 				int semester;
-				if(newValue.equals("1학기"))
+				if (newValue.equals("1학기"))
 					semester = 1;
 				else
 					semester = 2;
 				txtSemester.setText(Integer.toString(semester));
-				
-				
+
+				if (comboMajor.getValue() == null && comboSemester.getValue() == null)
+					onlyCollegeSelected(newValue);
+
+				else if (comboMajor.getValue() == null && comboSemester.getValue() != null) {
+					collegeSemester(semester);
+					collegeSemester(semester);
+				}
+
+				else if (comboMajor.getValue() != null && comboSemester.getValue() == null)
+					collegeMajorSelected(comboMajor.getValue());
+
+				else if (comboMajor.getValue() != null && comboSemester.getValue() != null) {
+					everyOptionSelected(semester);
+					everyOptionSelected(semester);
+				}
+
 			}
 		});
 	}
@@ -147,11 +197,10 @@ public class SugangController implements Initializable {
 
 	}
 
-
 	public void onlyCollegeSelected(String collegeName) {
 		Task<ObservableList<CoursesTable>> task = new Task<ObservableList<CoursesTable>>() {
 //		String collegeName = comboCollege.getValue().toString();
-			
+
 			@Override
 			protected ObservableList<CoursesTable> call() throws Exception {
 				List<CoursesTable> list = SugangServiceImpl.getInstance().CollegeSelected(collegeName);
@@ -166,48 +215,64 @@ public class SugangController implements Initializable {
 		// 작업 실행 시작
 		exec.execute(task);
 	}
-	
+
 	public void collegeMajorSelected(String majorName) {
 		Task<ObservableList<CoursesTable>> task = new Task<ObservableList<CoursesTable>>() {
 //			String collegeName = comboCollege.getValue().toString();
-				
-				@Override
-				protected ObservableList<CoursesTable> call() throws Exception {
-					List<CoursesTable> list = SugangServiceImpl.getInstance().collegeMajor(majorName);
-					ObservableList<CoursesTable> obsList = FXCollections.observableArrayList(list);
 
-					return obsList;
-				}
+			@Override
+			protected ObservableList<CoursesTable> call() throws Exception {
+				List<CoursesTable> list = SugangServiceImpl.getInstance().collegeMajor(majorName);
+				ObservableList<CoursesTable> obsList = FXCollections.observableArrayList(list);
 
-			};
-			// 작업 실행 완료 후 호출
-			task.setOnSucceeded(e -> tvCoures.setItems((ObservableList<CoursesTable>) task.getValue()));
-			// 작업 실행 시작
-			exec.execute(task);
+				return obsList;
+			}
+
+		};
+		// 작업 실행 완료 후 호출
+		task.setOnSucceeded(e -> tvCoures.setItems((ObservableList<CoursesTable>) task.getValue()));
+		// 작업 실행 시작
+		exec.execute(task);
 	}
-	
-	public void everyOptionSelected() {
-		
+
+	public void everyOptionSelected(int semester) {
+		Task<ObservableList<CoursesTable>> task = new Task<ObservableList<CoursesTable>>() {
+
+			@Override
+			protected ObservableList<CoursesTable> call() throws Exception {
+				String majorName = comboMajor.getValue().toString();
+				List<CoursesTable> list = SugangServiceImpl.getInstance().allSelect(semester, majorName);
+				ObservableList<CoursesTable> obsList = FXCollections.observableArrayList(list);
+
+				return obsList;
+			}
+
+		};
+		// 작업 실행 완료 후 호출
+		task.setOnSucceeded(e -> tvCoures.setItems((ObservableList<CoursesTable>) task.getValue()));
+		// 작업 실행 시작
+		exec.execute(task);
 	}
-	
+
 	public void collegeSemester(int semester) {
 		Task<ObservableList<CoursesTable>> task = new Task<ObservableList<CoursesTable>>() {
-				
-				@Override
-				protected ObservableList<CoursesTable> call() throws Exception {
-					List<CoursesTable> list = SugangServiceImpl.getInstance().collegeMajor(majorName);
-					ObservableList<CoursesTable> obsList = FXCollections.observableArrayList(list);
 
-					return obsList;
-				}
+			@Override
+			protected ObservableList<CoursesTable> call() throws Exception {
+				String collegeName = comboCollege.getValue().toString();
+				List<CoursesTable> list = SugangServiceImpl.getInstance().collegesSemester(semester, collegeName);
+				ObservableList<CoursesTable> obsList = FXCollections.observableArrayList(list);
 
-			};
-			// 작업 실행 완료 후 호출
-			task.setOnSucceeded(e -> tvCoures.setItems((ObservableList<CoursesTable>) task.getValue()));
-			// 작업 실행 시작
-			exec.execute(task);
+				return obsList;
+			}
+
+		};
+		// 작업 실행 완료 후 호출
+		task.setOnSucceeded(e -> tvCoures.setItems((ObservableList<CoursesTable>) task.getValue()));
+		// 작업 실행 시작
+		exec.execute(task);
 	}
-	
+
 	@FXML
 	public void btnShowClicked(ActionEvent actionEvent) {
 		// 리스트뷰 다 선택한 다음에 클릭
