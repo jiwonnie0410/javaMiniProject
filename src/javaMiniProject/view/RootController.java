@@ -120,8 +120,8 @@ public class RootController implements Initializable {
 	@FXML // 성적조회
 	public void handlePageShowScore(ActionEvent actionEvent) {
 		try {
-			AnchorPane breakApply = FXMLLoader.load(getClass().getResource("BackApply.fxml"));
-			borderPane.setCenter(breakApply);
+			AnchorPane scoreView = FXMLLoader.load(getClass().getResource("ScoreView.fxml"));
+			borderPane.setCenter(scoreView);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 		}

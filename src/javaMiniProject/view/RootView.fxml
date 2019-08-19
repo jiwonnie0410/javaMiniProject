@@ -37,7 +37,7 @@
                         <Menu mnemonicParsing="false" text="수업">
                            <items>
                               <MenuItem mnemonicParsing="false" onAction="#handlePageTimeSchedule" text="시간표조회" />
-                              <MenuItem mnemonicParsing="false" text="성적조회" />
+                              <MenuItem mnemonicParsing="false" onAction="#handlePageShowScore" text="성적조회" />
                               <MenuItem mnemonicParsing="false" onAction="#handlePageSugang" text="수강신청" />
                            </items>
                         </Menu>
