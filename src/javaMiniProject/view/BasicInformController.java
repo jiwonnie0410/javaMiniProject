@@ -1,5 +1,6 @@
 package javaMiniProject.view;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +8,6 @@ import java.util.Map;
 import java.util.ResourceBundle;
 
 import javaMiniProject.service.impl.InformationServiceImpl;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -31,10 +31,6 @@ public class BasicInformController implements Initializable {
 	@FXML 	private ImageView ivStudent;
 //	@FXML private ComboBox comboGender;
 
-	@FXML
-	private void selectBasicInform(ActionEvent actionEvent) {
-
-	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -43,8 +39,10 @@ public class BasicInformController implements Initializable {
 		List<Map<String, Object>> list = new ArrayList<>();
 		list = InformationServiceImpl.getInstance().basicInform();
 		
-	    Image image = new Image("image/1001.jpg"); 
+		File file = new File("image/1001.jpg");
+	    Image image = new Image(file.toURI().toString());
 		ivStudent.setImage(image);
+
 		txtStudentNumber.setText(list.get(0).get("studentNumber").toString());
 		txtStudentName.setText(list.get(0).get("studentName").toString());
 		txtPhone.setText(list.get(0).get("phone").toString());
