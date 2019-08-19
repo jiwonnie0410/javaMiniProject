@@ -63,6 +63,61 @@ public class SugangDAO {
 		}
 		return mList;
 	}
+	
+	public List<CoursesTable> allSelected(Connection conn, int semester, String majorName) throws SQLException{
+		List<CoursesTable> courseList = new ArrayList<>();
+		String sql = "SELECT C.COURSE_CODE, C.COURSE_NAME, C.TIME_SCHEDULE, C.SEMESTER, P.P_NAME, C.COURSE_POINT, C.LIMIT_STUDENT" + 
+				" FROM COURSES C, PROFESSORS P" + 
+				" WHERE C.P_NUMBER = P.P_NUMBER" + 
+				"        AND C.SEMESTER = ?" + 
+				"        AND C.MAJOR_NUMBER = (SELECT MAJOR_NUMBER" + 
+				"                        FROM MAJORS" + 
+				"                        WHERE MAJOR LIKE ?)";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, semester);
+		pstmt.setString(2, majorName);
+		ResultSet rs = pstmt.executeQuery();
+		while (rs.next()) {
+			CoursesTable cTable = new CoursesTable();
+			cTable.setCourseCode(rs.getInt("course_code"));
+			cTable.setCourseName(rs.getString("course_name"));
+			cTable.setCoursePoint(rs.getInt("course_point"));
+			cTable.setProfessorName(rs.getString("p_name"));
+			cTable.setTimeSchedule(rs.getString("time_schedule"));
+			cTable.setLimitNumber(rs.getInt("limit_student"));
+			courseList.add(cTable);
+		}
+		return courseList;
+	}
+	
+	public List<CoursesTable> collegeSemester(Connection conn, int semester, String collegeName) throws SQLException{
+		List<CoursesTable> courseList = new ArrayList<>();
+		String sql = "SELECT C.COURSE_CODE, C.COURSE_NAME, C.TIME_SCHEDULE, C.SEMESTER, P.P_NAME, C.COURSE_POINT, C.LIMIT_STUDENT, C.MAJOR_NUMBER" + 
+				" FROM COURSES C, PROFESSORS P" + 
+				" WHERE C.P_NUMBER = P.P_NUMBER" + 
+				"      AND C.SEMESTER = ?" + 
+				"      AND (C.MAJOR_NUMBER IN (SELECT MAJOR_NUMBER" + 
+				"                                                    FROM MAJORS" + 
+				"                                                    WHERE COLLEGE_NUMBER = (SELECT COLLEGE_NUMBER" + 
+				"                                                                            FROM COLLEGES" + 
+				"                                                                            WHERE COLLEGE_NAME LIKE ?))" + 
+				"                                                        OR C.MAJOR_NUMBER IS NULL)";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, semester);
+		pstmt.setString(2, collegeName);
+		ResultSet rs = pstmt.executeQuery();
+		while (rs.next()) {
+			CoursesTable cTable = new CoursesTable();
+			cTable.setCourseCode(rs.getInt("course_code"));
+			cTable.setCourseName(rs.getString("course_name"));
+			cTable.setCoursePoint(rs.getInt("course_point"));
+			cTable.setProfessorName(rs.getString("p_name"));
+			cTable.setTimeSchedule(rs.getString("time_schedule"));
+			cTable.setLimitNumber(rs.getInt("limit_student"));
+			courseList.add(cTable);
+		}
+		return courseList;
+	}
 
 	public void sugangApply(Connection conn, int courseCode, int semester) throws SQLException {
 		// 학번, 과목코드, 학기, 연도, 시퀀스, 스코어
@@ -146,4 +201,6 @@ public class SugangDAO {
 		return courseList;
 
 	}
+	
+	
 }

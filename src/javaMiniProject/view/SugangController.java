@@ -109,6 +109,22 @@ public class SugangController implements Initializable {
 				collegeMajorSelected(newValue);
 			}
 		});
+		
+		// semester combobox event 지정
+		comboSemester.valueProperty().addListener(new ChangeListener<String>() {
+			
+			@Override
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+				int semester;
+				if(newValue.equals("1학기"))
+					semester = 1;
+				else
+					semester = 2;
+				txtSemester.setText(Integer.toString(semester));
+				
+				
+			}
+		});
 	}
 
 	@FXML
@@ -172,6 +188,24 @@ public class SugangController implements Initializable {
 	
 	public void everyOptionSelected() {
 		
+	}
+	
+	public void collegeSemester(int semester) {
+		Task<ObservableList<CoursesTable>> task = new Task<ObservableList<CoursesTable>>() {
+				
+				@Override
+				protected ObservableList<CoursesTable> call() throws Exception {
+					List<CoursesTable> list = SugangServiceImpl.getInstance().collegeMajor(majorName);
+					ObservableList<CoursesTable> obsList = FXCollections.observableArrayList(list);
+
+					return obsList;
+				}
+
+			};
+			// 작업 실행 완료 후 호출
+			task.setOnSucceeded(e -> tvCoures.setItems((ObservableList<CoursesTable>) task.getValue()));
+			// 작업 실행 시작
+			exec.execute(task);
 	}
 	
 	@FXML
