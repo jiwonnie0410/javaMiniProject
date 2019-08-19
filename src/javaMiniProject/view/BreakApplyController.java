@@ -59,6 +59,7 @@ public class BreakApplyController implements Initializable {
 		// 콤보 박스 되는지 확인
 		ObservableList<String> option = FXCollections.observableArrayList("휴학", "복학");
 		comboOption.setItems(option);
+		
 		ObservableList<String> semester = FXCollections.observableArrayList("1학기", "2학기");
 		comboSemester.setItems(semester);
 		

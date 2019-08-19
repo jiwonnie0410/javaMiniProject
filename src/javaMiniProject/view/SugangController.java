@@ -52,10 +52,12 @@ public class SugangController implements Initializable {
 		// 콤보 박스 되는지 한번 확인...
 		ObservableList<String> cbsemester = FXCollections.observableArrayList("1학기", "2학기");
 		comboSemester.setItems(cbsemester);
+		
 		ObservableList<String> cbmajor = FXCollections.observableArrayList("컴퓨터공학과", "법학과", "기타등등ㅎㅎ");
-		comboSemester.setItems(cbmajor);
+		comboMajor.setItems(cbmajor);
+		
 		ObservableList<String> cbcollege = FXCollections.observableArrayList("공과대학", "인문대학");
-		comboSemester.setItems(cbcollege);
+		comboCollege.setItems(cbcollege);
 		
 
 		// 리스트뷰 값 초기화

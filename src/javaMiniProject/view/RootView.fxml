@@ -10,21 +10,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaMiniProject.view.RootController">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaMiniProject.view.RootController">
    <top>
       <AnchorPane prefHeight="99.0" prefWidth="974.0" BorderPane.alignment="CENTER">
          <children>
             <AnchorPane prefHeight="87.0" prefWidth="901.0">
                <children>
-                  <ImageView fx:id="imgLogo" onMouseClicked="#clickLogo" fitHeight="23.0" fitWidth="212.0" layoutX="17.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgLogo" fitHeight="23.0" fitWidth="212.0" layoutX="17.0" layoutY="14.0" onMouseClicked="#clickLogo" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@image/yedam.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="labelHello" layoutX="719.0" layoutY="14.0" prefHeight="23.0" prefWidth="73.0" text="안녕하세요!" />
-                  <Label fx:id="labelNim" layoutX="871.0" layoutY="14.0" prefHeight="23.0" prefWidth="21.0" text="님" />
-                  <Label fx:id="labelName" layoutX="792.0" layoutY="14.0" prefHeight="23.0" prefWidth="73.0" />
-                  <Button fx:id="btnLogInOut" layoutX="908.0" layoutY="14.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="73.0" text="로그아웃" />
+                  <Label id="labelHello" fx:id="labelHello" layoutX="719.0" layoutY="14.0" prefHeight="23.0" prefWidth="73.0" text="안녕하세요!" visible="false" />
+                  <Label fx:id="labelNim" layoutX="871.0" layoutY="14.0" prefHeight="23.0" prefWidth="21.0" text="님" visible="false" />
+                  <Label fx:id="labelName" layoutX="792.0" layoutY="14.0" prefHeight="23.0" prefWidth="73.0" visible="false" />
+                  <Button layoutX="908.0" layoutY="14.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="73.0" text="로그아웃" />
                   <MenuBar fx:id="menuBar" layoutY="49.0" prefHeight="25.0" prefWidth="1000.0">
                      <menus>
                         <Menu mnemonicParsing="false" text="학적">
@@ -36,21 +36,21 @@
                         </Menu>
                         <Menu mnemonicParsing="false" text="수업">
                            <items>
-                              <MenuItem onAction="#handlePageTimeSchedule" mnemonicParsing="false" text="시간표조회" />
+                              <MenuItem mnemonicParsing="false" onAction="#handlePageTimeSchedule" text="시간표조회" />
                               <MenuItem mnemonicParsing="false" text="성적조회" />
                               <MenuItem mnemonicParsing="false" onAction="#handlePageSugang" text="수강신청" />
                            </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="등록">
                            <items>
-                              <MenuItem onAction="#handlePagePaymentHistory" mnemonicParsing="false" text="납부내역조회" />
+                              <MenuItem mnemonicParsing="false" onAction="#handlePagePaymentHistory" text="납부내역조회" />
                               <MenuItem mnemonicParsing="false" text="고지서" />
                               <MenuItem mnemonicParsing="false" text="납부하기" />
                            </items>
                         </Menu>
                      </menus>
                   </MenuBar>
-                  <Button fx:id="btnLogInOut" onAction="#handleLoginPage" layoutX="908.0" layoutY="14.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="73.0" text="로그인" />
+                  <Button fx:id="btnLogInOut" layoutX="908.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleLoginPage" prefHeight="23.0" prefWidth="73.0" text="로그인" />
                </children>
             </AnchorPane>
          </children>

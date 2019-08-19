@@ -19,10 +19,10 @@ public class ScoreDAO {
 	
 	public List<ScoreTable> selectTotalScore(Connection conn) throws SQLException {
 
-		String sql = "SELECT ?.no, su.year, s.semester/2+1 as grade, c.number, c.name, c.point, 성적(대응되는알파벳-테이블따로ㄱㄱ).성적 "
-				+ " FROM sugang su, students s, course c, 성적 sc "
-				+ "where 조건 "
-				+ "order by 1"; // 리스트에 넣을땐 오더바이!
+		String sql = "select n.seq as No , su.year, TRUNC(st.complete/2) as grade, c.course_code, c.course_name, c.course_point, su.score\r\n" + 
+				"from sugang su, students st, courses c, seq n\r\n" + 
+				"where su.s_number = st.s_number AND su.course_code = c.course_code AND su.score IS NOT NULL AND su.sugang_number=n.seq\r\n" + 
+				"order by 1"; // 리스트에 넣을땐 오더바이!
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		
 		ScoreTable score = null;
@@ -31,13 +31,13 @@ public class ScoreDAO {
 		ResultSet rs = pstmt.executeQuery();
 		while (rs.next()) {
 			score = new ScoreTable();
-			score.setCourseCode(rs.getInt("course_number"));//낼 가서 컬럼이름 맞는지 확인하기 //course codeㅎㅎㅎ
+			score.setNumber(rs.getInt("No"));
+			score.setYear(rs.getInt("year"));
+			score.setStudentGrade(rs.getInt("grade"));
+			score.setCourseCode(rs.getInt("course_code"));
 			score.setCourseName(rs.getString("course_name"));
 			score.setCoursePoint(rs.getInt("course_point"));
-			score.setGrade(grade);
-			score.setNumber(number);
-			score.setStudentGrade(rs.getInt("student_grade"));
-			score.setYear(rs.getInt("sugang_year"));
+			score.setGrade(rs.getString("score"));
 
 //			dept.setDepartmentId(rs.getInt("department_id"));
 //			dept.setDepartmentName(rs.getString("department_name"));
