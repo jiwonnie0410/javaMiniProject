@@ -10,6 +10,7 @@ import java.util.List;
 import javaMiniProject.ProjectMain;
 import javaMiniProject.model.ScoreSemesterTable;
 import javaMiniProject.model.ScoreTable;
+import javaMiniProject.model.TotalScore;
 
 public class ScoreDAO {
 
@@ -21,10 +22,17 @@ public class ScoreDAO {
 	
 	public List<ScoreTable> selectTotalScore(Connection conn) throws SQLException {
 
-		String sql = "select rownum as No, su.year, c.course_code, c.course_name, c.course_point, su.score\r\n" + 
-				"from sugang su, students st, courses c, seq n\r\n" + 
-				"where st.s_number = ? AND su.s_number = st.s_number AND su.course_code = c.course_code AND su.score IS NOT NULL AND su.sugang_number=n.seq\r\n" + 
-				"order by 1"; // 리스트에 넣을땐 오더바이!
+//		String sql = "select rownum as No, su.year, c.course_code, c.course_name, c.course_point, su.score\r\n" + 
+//				"from sugang su, students st, courses c\r\n" + 
+//				"where st.s_number = ? AND su.s_number = st.s_number AND su.course_code = c.course_code AND su.score IS NOT NULL \r\n" + 
+//				"order by 1"; // 리스트에 넣을땐 오더바이!
+		
+		String sql ="select rownum as No, a.* from\r\n" + 
+				"(select su.year, c.course_code, c.course_name, c.course_point, su.score\r\n" + 
+				"from sugang su, students st, courses c\r\n" + 
+				"where st.s_number = ? AND su.s_number = st.s_number AND su.course_code = c.course_code AND su.score IS NOT NULL \r\n" + 
+				"order by su.year)a" ;
+				
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, ProjectMain.ID);
 		
@@ -78,6 +86,32 @@ public class ScoreDAO {
 			score.setSemester((rs.getInt("semester")));
 			score.setSumCPSemester((rs.getInt("score_sum")));
 			score.setAvgCPSemester((rs.getDouble("score_avg")));
+			
+			list.add(score);
+
+		}
+
+		return list;
+
+	}
+	
+	public List<TotalScore> justTotalScore(Connection conn) throws SQLException {
+
+		String sql = ;
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, ProjectMain.ID);
+		
+		TotalScore score = null;
+		List<TotalScore> list = new ArrayList<>();
+
+		ResultSet rs = pstmt.executeQuery();
+		while (rs.next()) {
+//			score = new ScoreSemesterTable();
+//			score.setNumber2((rs.getInt("No")));
+//			score.setYear2((rs.getInt("year")));
+//			score.setSemester((rs.getInt("semester")));
+//			score.setSumCPSemester((rs.getInt("score_sum")));
+//			score.setAvgCPSemester((rs.getDouble("score_avg")));
 			
 			list.add(score);
 

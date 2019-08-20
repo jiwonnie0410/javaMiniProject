@@ -2,6 +2,7 @@ package javaMiniProject.view;
 
 import java.io.IOException;
 
+import javaMiniProject.ProjectMain;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -77,6 +78,7 @@ public class RootController{
 		alert.setHeaderText("Logout");
 		alert.setContentText("로그아웃 하셨습니다.");
 		alert.show();
+		ProjectMain.ID = 0;
 	}
 	
 

@@ -18,6 +18,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
 
 public class ScoreController implements Initializable{
@@ -51,6 +52,14 @@ public class ScoreController implements Initializable{
 	private TableColumn<ScoreSemesterTable, Integer> columnSumCPSemester;
 	@FXML
 	private TableColumn<ScoreSemesterTable, Double> columnAvgCPSemester;
+	@FXML
+	private TextField txtAllScoreSum;
+	@FXML
+	private TextField txtSemesterCPSum;
+	@FXML
+	private TextField txtSemesterScoreSum;
+	@FXML
+	private TextField txtSemesterScoreAvg;
 
 	// 쓰레드풀 지정
 	private Executor exec;

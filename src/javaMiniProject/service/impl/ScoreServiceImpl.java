@@ -10,6 +10,7 @@ import java.util.List;
 import javaMiniProject.common.DAO;
 import javaMiniProject.model.ScoreSemesterTable;
 import javaMiniProject.model.ScoreTable;
+import javaMiniProject.model.TotalScore;
 
 
 
@@ -53,6 +54,19 @@ public class ScoreServiceImpl {
 	}
 	
 	
+	//성적집계
+	public List<TotalScore> justTotalScore() {
+		Connection conn = DAO.getConnect();
+		List<TotalScore> list = null;
+		try {
+			list = scoreDAO.justTotalScore(conn);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DAO.close(conn);
+		}
+		return list;
+	}
 
 	
 }
