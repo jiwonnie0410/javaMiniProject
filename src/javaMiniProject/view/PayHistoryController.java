@@ -11,7 +11,6 @@ import javaMiniProject.service.impl.PayHistoryService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -36,18 +35,8 @@ public class PayHistoryController implements Initializable {
 		clCompleteYear.setCellValueFactory(cellData -> cellData.getValue().completeYearProperty().asObject());
 		clDidPay.setCellValueFactory(cellData -> cellData.getValue().didPayProperty());
 		clPayDate.setCellValueFactory(cellData -> cellData.getValue().payDateProperty());
-
-		// 쓰레드풀 생성
-		exec = Executors.newCachedThreadPool((runnable) -> {
-			Thread t = new Thread(runnable);
-			t.setDaemon(true);
-			return t;
-		});
 		
-	}
-	
-	@FXML
-	public void btnSearchClicked(ActionEvent event) {
+		
 		Task<ObservableList<PayHistoryTable>> task = new Task<ObservableList<PayHistoryTable>>() {
 
 			@Override
@@ -59,6 +48,15 @@ public class PayHistoryController implements Initializable {
 			}
 
 		};
+		
+		// 쓰레드풀 생성
+				exec = Executors.newCachedThreadPool((runnable) -> {
+					Thread t = new Thread(runnable);
+					t.setDaemon(true);
+					return t;
+				});
+				
+				
 		// 작업 실행 완료 후 호출
 		task.setOnSucceeded(e -> tvHistory.setItems((ObservableList<PayHistoryTable>) task.getValue()));
 		// 작업 실행 시작

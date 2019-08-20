@@ -21,7 +21,7 @@ public class PayHistoryDAO {
 
 	public List<PayHistoryTable> payHistoryTable (Connection conn) throws SQLException {
 		List<PayHistoryTable> historyList = new ArrayList<>();
-		String sql = "SELECT S_NUMBER, COMPLETE, PAY_YEAR, PAY_STATUS, PAY_DATE" + 
+		String sql = "SELECT S_NUMBER, COMPLETE, PAY_YEAR, PAY_STATUS, TO_CHAR(PAY_DATE, 'yyyy/mm/dd') as pay_date" + 
 					" FROM PAYMENTS" + 
 					" WHERE PAY_STATUS LIKE '납부'";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -29,7 +29,7 @@ public class PayHistoryDAO {
 		ResultSet rs = pstmt.executeQuery();
 		while(rs.next()) {
 			PayHistoryTable pTable = new PayHistoryTable();
-			pTable.setStudentNumber(rs.getInt(ProjectMain.ID));
+			pTable.setStudentNumber(ProjectMain.ID);
 			pTable.setCompleteSemester(rs.getInt("complete"));
 			pTable.setCompleteYear(rs.getInt("PAY_YEAR"));
 			pTable.setDidPay(rs.getString("PAY_STATUS"));
