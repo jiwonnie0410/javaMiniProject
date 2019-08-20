@@ -13,33 +13,33 @@ public class ScoreTable {
 	private StringProperty courseName;
 	private IntegerProperty coursePoint;
 	private StringProperty grade;
-	private IntegerProperty semester;
-	private IntegerProperty sumCPSemester;
-	private IntegerProperty avgCPSemester;
+//	private IntegerProperty semester;
+//	private IntegerProperty sumCPSemester;
+//	private IntegerProperty avgCPSemester;
 
-	public Integer getSemester() {
-		return semester.get();
-	}
-
-	public void setSemester(Integer semester) {
-		this.semester.set(semester);
-	}
-
-	public Integer getSumCPSemester() {
-		return sumCPSemester.get();
-	}
-
-	public void setSumCPSemester(Integer sumCPSemester) {
-		this.sumCPSemester.set(sumCPSemester);
-	}
-
-	public Integer getAvgCPSemester() {
-		return avgCPSemester.get();
-	}
-
-	public void setAvgCPSemester(Integer avgCPSemester) {
-		this.avgCPSemester.set(avgCPSemester);
-	}
+//	public Integer getSemester() {
+//		return semester.get();
+//	}
+//
+//	public void setSemester(Integer semester) {
+//		this.semester.set(semester);
+//	}
+//
+//	public Integer getSumCPSemester() {
+//		return sumCPSemester.get();
+//	}
+//
+//	public void setSumCPSemester(Integer sumCPSemester) {
+//		this.sumCPSemester.set(sumCPSemester);
+//	}
+//
+//	public Integer getAvgCPSemester() {
+//		return avgCPSemester.get();
+//	}
+//
+//	public void setAvgCPSemester(Integer avgCPSemester) {
+//		this.avgCPSemester.set(avgCPSemester);
+//	}
 
 	// 생성자(=필드초기화)
 	public ScoreTable() {
@@ -50,9 +50,9 @@ public class ScoreTable {
 		courseName = new SimpleStringProperty();
 		coursePoint = new SimpleIntegerProperty();
 		grade = new SimpleStringProperty();
-		semester = new SimpleIntegerProperty();
-		sumCPSemester = new SimpleIntegerProperty();
-		avgCPSemester = new SimpleIntegerProperty();
+//		semester = new SimpleIntegerProperty();
+//		sumCPSemester = new SimpleIntegerProperty();
+//		avgCPSemester = new SimpleIntegerProperty();
 
 	}
 
@@ -84,17 +84,17 @@ public class ScoreTable {
 		return grade;
 	}
 	
-	public IntegerProperty semesterProperty() {
-		return semester;
-	}
-	
-	public IntegerProperty sumCPSemesterProperty() {
-		return sumCPSemester;
-	}
-	
-	public IntegerProperty avgCPSemesterProperty() {
-		return avgCPSemester;
-	}
+//	public IntegerProperty semesterProperty() {
+//		return semester;
+//	}
+//	
+//	public IntegerProperty sumCPSemesterProperty() {
+//		return sumCPSemester;
+//	}
+//	
+//	public IntegerProperty avgCPSemesterProperty() {
+//		return avgCPSemester;
+//	}
 	
 	
 
