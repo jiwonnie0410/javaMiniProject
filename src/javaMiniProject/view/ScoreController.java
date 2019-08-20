@@ -37,14 +37,14 @@ public class ScoreController implements Initializable{
 	private TableColumn<ScoreTable, Integer> columnCoursePoint;
 	@FXML
 	private TableColumn<ScoreTable, String> columnGrade;
-	@FXML
-	private TableView<ScoreTable> tvScoreSemester;
-	@FXML
-	private TableColumn<ScoreTable, Integer> columnSemester;
-	@FXML
-	private TableColumn<ScoreTable, Integer> columnSumCPSemester;
-	@FXML
-	private TableColumn<ScoreTable, Integer> columnAvgCPSemester;
+//	@FXML
+//	private TableView<ScoreTable> tvScoreSemester;
+//	@FXML
+//	private TableColumn<ScoreTable, Integer> columnSemester;
+//	@FXML
+//	private TableColumn<ScoreTable, Integer> columnSumCPSemester;
+//	@FXML
+//	private TableColumn<ScoreTable, Integer> columnAvgCPSemester;
 
 	// 쓰레드풀 지정
 	private Executor exec;
@@ -60,9 +60,9 @@ public class ScoreController implements Initializable{
 		columnCourseName.setCellValueFactory(cellData -> cellData.getValue().courseNameProperty());
 		columnCoursePoint.setCellValueFactory(cellData -> cellData.getValue().coursePointProperty().asObject());
 		columnGrade.setCellValueFactory(cellData -> cellData.getValue().gradeProperty());
-		columnSemester.setCellValueFactory(cellData -> cellData.getValue().semesterProperty().asObject());
-		columnSumCPSemester.setCellValueFactory(cellData -> cellData.getValue().sumCPSemesterProperty().asObject());
-		columnAvgCPSemester.setCellValueFactory(cellData -> cellData.getValue().avgCPSemesterProperty().asObject());
+//		columnSemester.setCellValueFactory(cellData -> cellData.getValue().semesterProperty().asObject());
+//		columnSumCPSemester.setCellValueFactory(cellData -> cellData.getValue().sumCPSemesterProperty().asObject());
+//		columnAvgCPSemester.setCellValueFactory(cellData -> cellData.getValue().avgCPSemesterProperty().asObject());
 		
 		
 		exec = Executors.newCachedThreadPool((runnable) -> {
@@ -85,6 +85,7 @@ public class ScoreController implements Initializable{
 		task.setOnSucceeded(e -> {
 //			Platform.runLater(() ->{
 				tvScore.setItems((ObservableList<ScoreTable>) task.getValue());
+				System.out.println(task.toString());
 //			});
 		});
 //		tvDept.setItems(obsList);
