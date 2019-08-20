@@ -21,7 +21,6 @@
                           <columns>
                             <TableColumn fx:id="columnNumber" prefWidth="56.0" text="No" />
                               <TableColumn fx:id="columnYear" prefWidth="74.0" text="연도" />
-                            <TableColumn fx:id="columnStudentGrade" prefWidth="77.0" text="학년" />
                               <TableColumn fx:id="columnCourseCode" prefWidth="84.0" text="과목코드" />
                               <TableColumn fx:id="columnCourseName" prefWidth="159.0" text="과목명" />
                               <TableColumn fx:id="columnCoursePoint" prefWidth="85.0" text="신청학점" />
@@ -42,14 +41,13 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutY="-3.0" prefHeight="315.0" prefWidth="600.0">
+                        <TableView fx:id="tvScoreSemester" layoutY="-3.0" prefHeight="315.0" prefWidth="600.0">
                            <columns>
-                              <TableColumn prefWidth="56.0" text="No" />
-                              <TableColumn prefWidth="94.0" text="연도" />
-                              <TableColumn prefWidth="73.0" text="학기" />
-                              <TableColumn prefWidth="73.0" text="학년" />
-                              <TableColumn prefWidth="97.0" text="신청학점" />
-                              <TableColumn prefWidth="111.0" text="평점" />
+                              <TableColumn fx:id="columnNumber2" prefWidth="56.0" text="No" />
+                              <TableColumn fx:id="columnYear2" prefWidth="94.0" text="연도" />
+                              <TableColumn fx:id="columnSemester" prefWidth="73.0" text="학기" />
+                              <TableColumn fx:id="columnSumCPSemester" prefWidth="97.0" text="신청학점" />
+                              <TableColumn fx:id="columnAvgCPSemester" prefWidth="111.0" text="평점" />
                            </columns>
                         </TableView>
                         <Label alignment="CENTER" layoutX="10.0" layoutY="321.0" prefHeight="33.0" prefWidth="99.0" text="총 신청학점">

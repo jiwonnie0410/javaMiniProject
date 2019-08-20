@@ -8,51 +8,28 @@ import javafx.beans.property.StringProperty;
 public class ScoreTable {
 	private IntegerProperty number;
 	private IntegerProperty year;
-	private IntegerProperty studentGrade;
+//	private IntegerProperty studentGrade;
 	private IntegerProperty courseCode; // CTRL SHIFT (X, Y) -> 대소문자 변경
 	private StringProperty courseName;
 	private IntegerProperty coursePoint;
 	private StringProperty grade;
-//	private IntegerProperty semester;
-//	private IntegerProperty sumCPSemester;
-//	private IntegerProperty avgCPSemester;
+	
+	
+	
+	
 
-//	public Integer getSemester() {
-//		return semester.get();
-//	}
-//
-//	public void setSemester(Integer semester) {
-//		this.semester.set(semester);
-//	}
-//
-//	public Integer getSumCPSemester() {
-//		return sumCPSemester.get();
-//	}
-//
-//	public void setSumCPSemester(Integer sumCPSemester) {
-//		this.sumCPSemester.set(sumCPSemester);
-//	}
-//
-//	public Integer getAvgCPSemester() {
-//		return avgCPSemester.get();
-//	}
-//
-//	public void setAvgCPSemester(Integer avgCPSemester) {
-//		this.avgCPSemester.set(avgCPSemester);
-//	}
+	
 
 	// 생성자(=필드초기화)
 	public ScoreTable() {
 		number = new SimpleIntegerProperty();
 		year = new SimpleIntegerProperty();
-		studentGrade = new SimpleIntegerProperty();
+//		studentGrade = new SimpleIntegerProperty();
 		courseCode = new SimpleIntegerProperty();
 		courseName = new SimpleStringProperty();
 		coursePoint = new SimpleIntegerProperty();
 		grade = new SimpleStringProperty();
-//		semester = new SimpleIntegerProperty();
-//		sumCPSemester = new SimpleIntegerProperty();
-//		avgCPSemester = new SimpleIntegerProperty();
+		
 
 	}
 
@@ -64,9 +41,9 @@ public class ScoreTable {
 		return year;
 	}
 
-	public IntegerProperty studentGradeProperty() {
-		return studentGrade;
-	}
+//	public IntegerProperty studentGradeProperty() {
+//		return studentGrade;
+//	}
 
 	public IntegerProperty courseCodeProperty() {
 		return courseCode;
@@ -84,17 +61,7 @@ public class ScoreTable {
 		return grade;
 	}
 	
-//	public IntegerProperty semesterProperty() {
-//		return semester;
-//	}
-//	
-//	public IntegerProperty sumCPSemesterProperty() {
-//		return sumCPSemester;
-//	}
-//	
-//	public IntegerProperty avgCPSemesterProperty() {
-//		return avgCPSemester;
-//	}
+	
 	
 	
 
@@ -115,13 +82,13 @@ public class ScoreTable {
 		this.year.set(year);
 	}
 
-	public Integer getStudentGrade() {
-		return studentGrade.get();
-	}
-
-	public void setStudentGrade(Integer studentGrade) {
-		this.studentGrade.set(studentGrade);
-	}
+//	public Integer getStudentGrade() {
+//		return studentGrade.get();
+//	}
+//
+//	public void setStudentGrade(Integer studentGrade) {
+//		this.studentGrade.set(studentGrade);
+//	}
 
 	public Integer getCourseCode() {
 		return courseCode.get();
