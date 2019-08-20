@@ -22,7 +22,7 @@ public class SugangDAO {
 	
 	public List<CoursesTable> onlyCollege(Connection conn, String collegeName) throws SQLException {
 		List<CoursesTable> courseList = new ArrayList<>();
-		String sql = "SELECT C.COURSE_CODE, C.COURSE_NAME, C.TIME_SCHEDULE, P.P_NAME, C.COURSE_POINT, C.LIMIT_STUDENT" + 
+		String sql = "SELECT C.COURSE_CODE, C.COURSE_NAME, P.P_NAME, C.COURSE_POINT, C.LIMIT_STUDENT, C.DAY, C.START_TIME, C.END_TIME" + 
 				" FROM COURSES C, PROFESSORS P" + 
 				" WHERE C.P_NUMBER = P.P_NUMBER AND (C.MAJOR_NUMBER IN (SELECT MAJOR_NUMBER" + 
 				"                                                    FROM MAJORS" + 
@@ -39,7 +39,7 @@ public class SugangDAO {
 			cTable.setCourseName(rs.getString("course_name"));
 			cTable.setCoursePoint(rs.getInt("course_point"));
 			cTable.setProfessorName(rs.getString("p_name"));
-			cTable.setTimeSchedule(rs.getString("time_schedule"));
+			cTable.setTimeSchedule(rs.getString("day") + " " + rs.getInt("start_time") + " ~ " + rs.getInt("end_time"));
 			cTable.setLimitNumber(rs.getInt("limit_student"));
 			courseList.add(cTable);
 		}
@@ -66,7 +66,7 @@ public class SugangDAO {
 	
 	public List<CoursesTable> allSelected(Connection conn, int semester, String majorName) throws SQLException{
 		List<CoursesTable> courseList = new ArrayList<>();
-		String sql = "SELECT C.COURSE_CODE, C.COURSE_NAME, C.TIME_SCHEDULE, C.SEMESTER, P.P_NAME, C.COURSE_POINT, C.LIMIT_STUDENT" + 
+		String sql = "SELECT C.COURSE_CODE, C.COURSE_NAME, C.SEMESTER, P.P_NAME, C.COURSE_POINT, C.LIMIT_STUDENT, C.DAY, C.START_TIME, C.END_TIME" + 
 				" FROM COURSES C, PROFESSORS P" + 
 				" WHERE C.P_NUMBER = P.P_NUMBER" + 
 				"        AND C.SEMESTER = ?" + 
@@ -83,7 +83,7 @@ public class SugangDAO {
 			cTable.setCourseName(rs.getString("course_name"));
 			cTable.setCoursePoint(rs.getInt("course_point"));
 			cTable.setProfessorName(rs.getString("p_name"));
-			cTable.setTimeSchedule(rs.getString("time_schedule"));
+			cTable.setTimeSchedule(rs.getString("day") + " " + rs.getInt("start_time") + " ~ " + rs.getInt("end_time"));
 			cTable.setLimitNumber(rs.getInt("limit_student"));
 			courseList.add(cTable);
 		}
@@ -92,7 +92,7 @@ public class SugangDAO {
 	
 	public List<CoursesTable> collegeSemester(Connection conn, int semester, String collegeName) throws SQLException{
 		List<CoursesTable> courseList = new ArrayList<>();
-		String sql = "SELECT C.COURSE_CODE, C.COURSE_NAME, C.TIME_SCHEDULE, C.SEMESTER, P.P_NAME, C.COURSE_POINT, C.LIMIT_STUDENT, C.MAJOR_NUMBER" + 
+		String sql = "SELECT C.COURSE_CODE, C.COURSE_NAME, C.SEMESTER, P.P_NAME, C.COURSE_POINT, C.LIMIT_STUDENT, C.MAJOR_NUMBER, C.DAY, C.START_TIME, C.END_TIME" + 
 				" FROM COURSES C, PROFESSORS P" + 
 				" WHERE C.P_NUMBER = P.P_NUMBER" + 
 				"      AND C.SEMESTER = ?" + 
@@ -112,7 +112,7 @@ public class SugangDAO {
 			cTable.setCourseName(rs.getString("course_name"));
 			cTable.setCoursePoint(rs.getInt("course_point"));
 			cTable.setProfessorName(rs.getString("p_name"));
-			cTable.setTimeSchedule(rs.getString("time_schedule"));
+			cTable.setTimeSchedule(rs.getString("day") + " " + rs.getInt("start_time") + " ~ " + rs.getInt("end_time"));
 			cTable.setLimitNumber(rs.getInt("limit_student"));
 			courseList.add(cTable);
 		}
@@ -132,8 +132,8 @@ public class SugangDAO {
 
 	public List<CoursesTable> showAllCourses(Connection conn) throws SQLException {
 		List<CoursesTable> courseList = new ArrayList<>();
-		String sql = "SELECT C.COURSE_CODE, C.COURSE_NAME, C.COURSE_POINT,"
-				+ "        P.P_NAME, C.TIME_SCHEDULE, C.LIMIT_STUDENT" + " FROM COURSES C, PROFESSORS P"
+		String sql = "SELECT C.COURSE_CODE, C.COURSE_NAME, C.COURSE_POINT, C.DAY, C.START_TIME, C.END_TIME,"
+				+ "        P.P_NAME, C.LIMIT_STUDENT" + " FROM COURSES C, PROFESSORS P"
 				+ " WHERE C.P_NUMBER = P.P_NUMBER ORDER BY 1";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		ResultSet rs = pstmt.executeQuery();
@@ -143,7 +143,7 @@ public class SugangDAO {
 			cTable.setCourseName(rs.getString("course_name"));
 			cTable.setCoursePoint(rs.getInt("course_point"));
 			cTable.setProfessorName(rs.getString("p_name"));
-			cTable.setTimeSchedule(rs.getString("time_schedule"));
+			cTable.setTimeSchedule(rs.getString("day") + " " + rs.getInt("start_time") + " ~ " + rs.getInt("end_time"));
 			cTable.setLimitNumber(rs.getInt("limit_student"));
 			courseList.add(cTable);
 		}
@@ -152,7 +152,7 @@ public class SugangDAO {
 	
 	public List<CoursesTable> collegeMajorSelected(Connection conn, String majorName) throws SQLException {
 		List<CoursesTable> courseList = new ArrayList<>();
-		String sql = "SELECT C.COURSE_CODE, C.COURSE_NAME, C.TIME_SCHEDULE, C.SEMESTER, P.P_NAME, C.COURSE_POINT, C.LIMIT_STUDENT" + 
+		String sql = "SELECT C.COURSE_CODE, C.COURSE_NAME, C.SEMESTER, P.P_NAME, C.COURSE_POINT, C.LIMIT_STUDENT, C.DAY, C.START_TIME, C.END_TIME" + 
 				" FROM COURSES C, PROFESSORS P" + 
 				" WHERE C.P_NUMBER = P.P_NUMBER AND" + 
 				"        C.MAJOR_NUMBER = (SELECT MAJOR_NUMBER" + 
@@ -167,7 +167,7 @@ public class SugangDAO {
 			cTable.setCourseName(rs.getString("course_name"));
 			cTable.setCoursePoint(rs.getInt("course_point"));
 			cTable.setProfessorName(rs.getString("p_name"));
-			cTable.setTimeSchedule(rs.getString("time_schedule"));
+			cTable.setTimeSchedule(rs.getString("day") + " " + rs.getInt("start_time") + " ~ " + rs.getInt("end_time"));
 			cTable.setLimitNumber(rs.getInt("limit_student"));
 			courseList.add(cTable);
 		}
@@ -176,8 +176,8 @@ public class SugangDAO {
 
 	public List<CoursesTable> showOneCourse(Connection conn, int semester, String major) throws SQLException {
 		List<CoursesTable> courseList = new ArrayList<>();
-		String sql = "SELECT C.COURSE_CODE, C.COURSE_NAME, C.COURSE_POINT," + 
-				"        P.P_NAME, C.TIME_SCHEDULE, C.LIMIT_STUDENT" + 
+		String sql = "SELECT C.COURSE_CODE, C.COURSE_NAME, C.COURSE_POINT, C.DAY, C.START_TIME, C.END_TIME," + 
+				"        P.P_NAME, C.LIMIT_STUDENT" + 
 				" FROM COURSES C, PROFESSORS P" + 
 				" WHERE C.P_NUMBER = P.P_NUMBER" + 
 				"        AND C.SEMESTER = ?" + 
@@ -194,7 +194,7 @@ public class SugangDAO {
 			cTable.setCourseName(rs.getString("course_name"));
 			cTable.setCoursePoint(rs.getInt("course_point"));
 			cTable.setProfessorName(rs.getString("p_name"));
-			cTable.setTimeSchedule(rs.getString("time_schedule"));
+			cTable.setTimeSchedule(rs.getString("day") + " " + rs.getInt("start_time") + " ~ " + rs.getInt("end_time"));
 			cTable.setLimitNumber(rs.getInt("limit_student"));
 			courseList.add(cTable);
 		}

@@ -1,6 +1,5 @@
 package javaMiniProject.view;
 
-import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +11,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 public class BasicInformController implements Initializable {
@@ -28,7 +25,6 @@ public class BasicInformController implements Initializable {
 	@FXML	private TextField txtPhone;
 	@FXML	private TextField txtIdentification;
 	@FXML	private TextField txtGender;
-	@FXML 	private ImageView ivStudent;
 //	@FXML private ComboBox comboGender;
 
 
@@ -39,15 +35,6 @@ public class BasicInformController implements Initializable {
 		List<Map<String, Object>> list = new ArrayList<>();
 		list = InformationServiceImpl.getInstance().basicInform();
 
-//		String address = list.get(0).get("studentPicture").toString();
-		
-		
-		File file = new File("./1001.jpg");
-	    Image image = new Image(file.toURI().toString());
-	    ivStudent.setImage(image);
-
-	    
-	    
 		txtStudentNumber.setText(list.get(0).get("studentNumber").toString());
 		txtStudentName.setText(list.get(0).get("studentName").toString());
 		txtPhone.setText(list.get(0).get("phone").toString());
@@ -55,8 +42,6 @@ public class BasicInformController implements Initializable {
 		txtMajorName.setText(list.get(0).get("majorName").toString());
 		txtIdentification.setText(list.get(0).get("identification").toString());
 		txtGender.setText(list.get(0).get("gender").toString());
-		
-//	comboGender.setItem(list.get(6).get("gender").toString());
 
 	}
 

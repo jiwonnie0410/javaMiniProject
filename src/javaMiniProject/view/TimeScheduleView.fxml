@@ -69,7 +69,7 @@
                   </Label>
                </children>
             </GridPane>
-            <GridPane alignment="CENTER" gridLinesVisible="true" layoutX="88.0" layoutY="6.0" prefHeight="402.0" prefWidth="540.0">
+            <GridPane fx:id="gridTable" alignment="CENTER" gridLinesVisible="true" layoutX="88.0" layoutY="6.0" prefHeight="402.0" prefWidth="540.0">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -134,14 +134,6 @@
                         </Label>
                      </children>
                   </HBox>
-                  <Label fx:id="label01" prefHeight="14.0" prefWidth="107.0" GridPane.rowIndex="1" />
-                  <Label fx:id="label02" prefHeight="14.0" prefWidth="107.0" GridPane.rowIndex="2" />
-                  <Label fx:id="label03" prefHeight="14.0" prefWidth="107.0" GridPane.rowIndex="3" />
-                  <Label fx:id="label04" prefHeight="14.0" prefWidth="107.0" GridPane.rowIndex="4" />
-                  <Label fx:id="label05" prefHeight="14.0" prefWidth="107.0" GridPane.rowIndex="5" />
-                  <Label fx:id="label06" prefHeight="14.0" prefWidth="107.0" GridPane.rowIndex="6" />
-                  <Label fx:id="label07" prefHeight="14.0" prefWidth="107.0" GridPane.rowIndex="7" />
-                  <Label fx:id="label08" prefHeight="14.0" prefWidth="107.0" GridPane.rowIndex="8" />
                </children>
             </GridPane>
          </children>
