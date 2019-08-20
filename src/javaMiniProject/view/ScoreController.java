@@ -93,22 +93,22 @@ public class ScoreController implements Initializable{
 		exec.execute(task);
 	}
 	
-	@FXML
-	private void ShowAllScore(ActionEvent actionEvent) {
-		Task<ObservableList<ScoreTable>> task = new Task<ObservableList<ScoreTable>>() {
-
-			@Override
-			protected ObservableList<ScoreTable> call() throws Exception {
-				List<ScoreTable> list = ScoreServiceImpl.getInstance().selectAllTable();
-				ObservableList<ScoreTable> obsList = FXCollections.observableArrayList(list);
-
-				return obsList;
-			}
-
-		};
-		task.setOnSucceeded(e -> tvScore.setItems((ObservableList<ScoreTable>) task.getValue()));
-//		tvDept.setItems(obsList);
-		exec.execute(task);
-	}
+//	@FXML
+//	private void ShowAllScore(ActionEvent actionEvent) {
+//		Task<ObservableList<ScoreTable>> task = new Task<ObservableList<ScoreTable>>() {
+//
+//			@Override
+//			protected ObservableList<ScoreTable> call() throws Exception {
+//				List<ScoreTable> list = ScoreServiceImpl.getInstance().selectAllTable();
+//				ObservableList<ScoreTable> obsList = FXCollections.observableArrayList(list);
+//
+//				return obsList;
+//			}
+//
+//		};
+//		task.setOnSucceeded(e -> tvScore.setItems((ObservableList<ScoreTable>) task.getValue()));
+////		tvDept.setItems(obsList);
+//		exec.execute(task);
+//	}
 	
 }

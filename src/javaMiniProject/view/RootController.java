@@ -123,7 +123,7 @@ public class RootController implements Initializable {
 			AnchorPane scoreView = FXMLLoader.load(getClass().getResource("ScoreView.fxml"));
 			borderPane.setCenter(scoreView);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
@@ -133,7 +133,7 @@ public class RootController implements Initializable {
 			AnchorPane breakApply = FXMLLoader.load(getClass().getResource("BackApply.fxml"));
 			borderPane.setCenter(breakApply);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
