@@ -1,5 +1,9 @@
 package javaMiniProject.service.impl;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -13,7 +17,11 @@ public class LoginServiceImpl {
 		return instance;
 	}
 	
-	public boolean login(int id, int password) {
+	public boolean login(int id, int password) throws FileNotFoundException {
+		File file = new File("d:/log.txt");
+		PrintStream printStream = new PrintStream(new FileOutputStream(file));
+		System.setOut(printStream);
+		
 		Connection conn = DAO.getConnect();
 		boolean success = false;
 		try {
@@ -21,6 +29,7 @@ public class LoginServiceImpl {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			System.out.println(e.getMessage());
 		} finally {
 			DAO.close(conn);
 		}

@@ -1,5 +1,6 @@
 package javaMiniProject.view;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.InputMismatchException;
@@ -17,14 +18,19 @@ import javafx.scene.layout.AnchorPane;
 
 public class LoginController {
 
-	@FXML	private AnchorPane anchorPane;
-	@FXML	private TextField txtId;
-	@FXML	private TextField txtPassword;
-	@FXML	private Button btnLogin;
-	@FXML	private Label lbId;
+	@FXML
+	private AnchorPane anchorPane;
+	@FXML
+	private TextField txtId;
+	@FXML
+	private TextField txtPassword;
+	@FXML
+	private Button btnLogin;
+	@FXML
+	private Label lbId;
 
 	@FXML
-	public void handleLogin(ActionEvent actionEvent) throws SQLException {
+	public void handleLogin(ActionEvent actionEvent) throws SQLException, FileNotFoundException {
 		try {
 			int id = Integer.parseInt(txtId.getText());
 			int password = Integer.parseInt(txtPassword.getText());
