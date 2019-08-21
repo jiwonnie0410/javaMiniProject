@@ -13,10 +13,11 @@ public class ProjectMain extends Application {
 	private BorderPane rootLayout;
 	
 	public static int ID = 0;
-	
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		
+		
 		// 1 primary stage 설정(모든 메서드에서 사용 가능)
 		this.primaryStage = primaryStage;
 
@@ -37,6 +38,8 @@ public class ProjectMain extends Application {
 			rootLayout.setCenter(homeView);
 
 		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			
 		}
 	}
 	
