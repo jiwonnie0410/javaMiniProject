@@ -95,30 +95,30 @@ public class ScoreDAO {
 
 	}
 	
-	public List<TotalScore> justTotalScore(Connection conn) throws SQLException {
-
-		String sql = ;
-		PreparedStatement pstmt = conn.prepareStatement(sql);
-		pstmt.setInt(1, ProjectMain.ID);
-		
-		TotalScore score = null;
-		List<TotalScore> list = new ArrayList<>();
-
-		ResultSet rs = pstmt.executeQuery();
-		while (rs.next()) {
-//			score = new ScoreSemesterTable();
-//			score.setNumber2((rs.getInt("No")));
-//			score.setYear2((rs.getInt("year")));
-//			score.setSemester((rs.getInt("semester")));
-//			score.setSumCPSemester((rs.getInt("score_sum")));
-//			score.setAvgCPSemester((rs.getDouble("score_avg")));
-			
-			list.add(score);
-
-		}
-
-		return list;
-
-	}
+//	public List<TotalScore> justTotalScore(Connection conn) throws SQLException {
+//
+//		String sql = ;
+//		PreparedStatement pstmt = conn.prepareStatement(sql);
+//		pstmt.setInt(1, ProjectMain.ID);
+//		
+//		TotalScore score = null;
+//		List<TotalScore> list = new ArrayList<>();
+//
+//		ResultSet rs = pstmt.executeQuery();
+//		while (rs.next()) {
+////			score = new ScoreSemesterTable();
+////			score.setNumber2((rs.getInt("No")));
+////			score.setYear2((rs.getInt("year")));
+////			score.setSemester((rs.getInt("semester")));
+////			score.setSumCPSemester((rs.getInt("score_sum")));
+////			score.setAvgCPSemester((rs.getDouble("score_avg")));
+//			
+//			list.add(score);
+//
+//		}
+//
+//		return list;
+//
+//	}
 	
 }
