@@ -8,6 +8,7 @@ import java.util.concurrent.Executors;
 
 import javaMiniProject.model.ScoreSemesterTable;
 import javaMiniProject.model.ScoreTable;
+import javaMiniProject.model.TotalScore;
 import javaMiniProject.service.impl.ScoreServiceImpl;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -132,6 +133,9 @@ public class ScoreController implements Initializable{
 //		tvDept.setItems(obsList);
 		task.setOnFailed(e->{System.out.println("error");});
 		exec.execute(task2);
+		
+//		TotalScore score = new TotalScore();
+//		score.setAllScoreSum(In);
 	}
 	
 //	@FXML

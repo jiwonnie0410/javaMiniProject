@@ -5,6 +5,7 @@ public class TotalScore {
 	private int semesterCPSum;
 	private double semesterScoreSum;
 	private double semesterScoreAvg;
+	
 	public double getAllScoreSum() {
 		return allScoreSum;
 	}
