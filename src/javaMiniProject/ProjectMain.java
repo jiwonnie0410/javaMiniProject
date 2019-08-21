@@ -1,5 +1,9 @@
 package javaMiniProject;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -16,8 +20,10 @@ public class ProjectMain extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		
-		
+		File file = new File("d:/log.txt");
+		PrintStream printStream = new PrintStream(new FileOutputStream(file));
+		System.setOut(printStream);
+
 		// 1 primary stage 설정(모든 메서드에서 사용 가능)
 		this.primaryStage = primaryStage;
 
@@ -30,7 +36,7 @@ public class ProjectMain extends Application {
 			rootLayout = FXMLLoader.load(getClass().getResource("view/RootView.fxml"));
 			Scene scene = new Scene(rootLayout, 1000, 750);
 
-			primaryStage.setTitle("이거는 창에 뜨는 글자");
+			primaryStage.setTitle("예담직업전문학교");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			
